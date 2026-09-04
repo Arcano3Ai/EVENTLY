@@ -27,6 +27,17 @@ class EventlyApp {
     this.renderVendorsTable();
     this.renderTasksBoard();
     this.renderTimeline();
+
+    // Welcome authenticated user toast
+    const authUser = sessionStorage.getItem('evently_auth_user');
+    if (authUser) {
+      try {
+        const user = JSON.parse(authUser);
+        setTimeout(() => {
+          this.showToast(`✨ Bienvenida, ${user.name} (${user.agency || 'Wedding Planner Pro'})`);
+        }, 500);
+      } catch (e) {}
+    }
   }
 
   // Bind UI Events
@@ -46,6 +57,14 @@ class EventlyApp {
       sidebarToggle.addEventListener('click', () => {
         this.state.sidebarCollapsed = !this.state.sidebarCollapsed;
         sidebar.classList.toggle('collapsed', this.state.sidebarCollapsed);
+      });
+    }
+
+    // Logout action
+    const logoutBtn = document.getElementById('btn-logout-sidebar');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem('evently_auth_user');
       });
     }
 
