@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EVENTLY — Plataforma de Gestión de Eventos & Bodas de Alta Gama</title>
   <meta name="description" content="Sistema operativo diseñado para Wedding Planners y coordinadoras de bodas de alta gama. Smart Seating con IA, recepción VIP sin filas, minuta minuto a minuto y paquetes según la cantidad de eventos.">
-  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-icon.svg">
+  <link rel="icon" type="image/jpeg" href="assets/logo/logooficial.jpg">
   <!-- Google Fonts: Inter & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -183,7 +183,6 @@
         <div class="showcase-video-wrapper" style="position: relative;">
           <video id="hero-main-video" autoplay loop muted playsinline poster="assets/images/hero_gala_event.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
             <source src="assets/video/video.mp4" type="video/mp4">
-            <source src="assets/video/evently_intro.mp4" type="video/mp4">
             Tu navegador no soporta reproducción de video HTML5.
           </video>
           
@@ -846,7 +845,7 @@
   </div>
 
   <!-- Audio Element -->
-  <audio id="ambient-audio-player" loop preload="auto">
+  <audio id="ambient-audio-player" autoplay loop preload="auto">
     <source src="assets/music/TODO%20PASA%20AQU%C3%8D.wav" type="audio/wav">
     <source src="assets/music/TODO PASA AQUÍ.wav" type="audio/wav">
     <source src="assets/music/todo_pasa_aqui.wav" type="audio/wav">
@@ -855,7 +854,7 @@
   <!-- Interactive Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Audio Engine - Assets Music (assets/music/TODO PASA AQUÍ.wav)
+      // Audio Engine - Autoplay con fallback de primera interacción
       const ambientPlayer = document.getElementById('ambient-audio-player');
       const floatAudioBtn = document.getElementById('floating-audio-btn');
       const headerMusicBtn = document.getElementById('header-music-toggle');
@@ -863,35 +862,57 @@
       const audioIndicator = document.getElementById('audio-pulse-indicator');
       const audioLabel = document.getElementById('audio-widget-label');
       let isPlaying = false;
+      let userManuallyPaused = false;
 
       function playMusic() {
+        if (userManuallyPaused) return;
+        ambientPlayer.volume = 0.85;
         ambientPlayer.play().then(() => {
           isPlaying = true;
-          audioIndicator.classList.add('playing');
-          audioLabel.textContent = "Reproduciendo: TODO PASA AQUÍ";
+          if (audioIndicator) audioIndicator.classList.add('playing');
+          if (audioLabel) audioLabel.textContent = "Reproduciendo: TODO PASA AQUÍ";
           if (headerMusicText) headerMusicText.textContent = "Pausar: TODO PASA AQUÍ";
           if (headerMusicBtn) headerMusicBtn.style.background = "rgba(245, 158, 11, 0.3)";
         }).catch(err => {
-          console.log("Audio play prevented:", err);
+          console.log("Autoplay en espera de primer gesto del usuario:", err);
         });
       }
 
       function pauseMusic() {
         ambientPlayer.pause();
         isPlaying = false;
-        audioIndicator.classList.remove('playing');
-        audioLabel.textContent = "Música: TODO PASA AQUÍ";
+        userManuallyPaused = true;
+        if (audioIndicator) audioIndicator.classList.remove('playing');
+        if (audioLabel) audioLabel.textContent = "Música: TODO PASA AQUÍ";
         if (headerMusicText) headerMusicText.textContent = "Música: TODO PASA AQUÍ";
         if (headerMusicBtn) headerMusicBtn.style.background = "transparent";
       }
 
       function toggleAmbient() {
-        if (!isPlaying) playMusic();
-        else pauseMusic();
+        if (!isPlaying) {
+          userManuallyPaused = false;
+          playMusic();
+        } else {
+          pauseMusic();
+        }
       }
 
       if (floatAudioBtn) floatAudioBtn.addEventListener('click', toggleAmbient);
       if (headerMusicBtn) headerMusicBtn.addEventListener('click', toggleAmbient);
+
+      // 1. Intento inmediato de autoplay al montar la página
+      playMusic();
+
+      // 2. Activación al primer gesto si la política de seguridad del navegador retiene el autoplay sin interacción previa
+      const unlockAudio = () => {
+        if (!isPlaying && !userManuallyPaused) {
+          playMusic();
+        }
+      };
+
+      ['click', 'touchstart', 'scroll', 'keydown'].forEach(evt => {
+        window.addEventListener(evt, unlockAudio, { once: true, passive: true });
+      });
 
       // Hero Video Audio Control
       const heroVideo = document.getElementById('hero-main-video');
@@ -925,18 +946,7 @@
         });
       }
 
-      // Wedding Fanfare SFX Button
-      const btnFanfare = document.getElementById('btn-demo-wedding-fanfare');
-      if (btnFanfare) {
-        btnFanfare.addEventListener('click', () => {
-          const sfx = new Audio('assets/music/vip_arrival_fanfare.wav');
-          sfx.play();
-          btnFanfare.textContent = "🎺 ¡Fanfarria VIP en Reproducción!";
-          setTimeout(() => {
-            btnFanfare.textContent = "🎺 Probar Fanfarria de Novios";
-          }, 3500);
-        });
-      }
+
 
       // Smart Seating Simulator
       const btnTestSeating = document.getElementById('btn-test-seating-preview');

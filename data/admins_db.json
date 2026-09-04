@@ -1,0 +1,71 @@
+[
+  {
+    "id": "admin-01",
+    "username": "admin",
+    "email": "admin@evently.com",
+    "password": "admin123",
+    "name": "Administrador General",
+    "role": "admin",
+    "roleLabel": "Dirección General & Control Total",
+    "agency": "EVENTLY Core Operations",
+    "avatar": "A",
+    "status": "active",
+    "permissions": [
+      "all",
+      "create_event",
+      "delete_event",
+      "manage_budget",
+      "manage_team",
+      "access_control",
+      "smart_seating"
+    ],
+    "notes": "Cuenta maestra de administración del sistema."
+  },
+  {
+    "id": "planner-02",
+    "username": "Irma García",
+    "altUsernames": ["irma", "irmagarcia", "irma.garcia@evently.com"],
+    "email": "irma.garcia@evently.com",
+    "password": "cristiancantú",
+    "altPasswords": ["cristiancantu"],
+    "name": "Irma García",
+    "role": "admin",
+    "roleLabel": "Wedding Planner Senior & Dirección de Bodas",
+    "agency": "Irma García Haute Weddings",
+    "avatar": "I",
+    "status": "active",
+    "permissions": [
+      "create_event",
+      "edit_event",
+      "smart_seating",
+      "run_of_show",
+      "manage_guests",
+      "manage_vendors",
+      "day_mode"
+    ],
+    "notes": "Acceso operativo y estratégico para Wedding Planners."
+  },
+  {
+    "id": "coord-03",
+    "username": "Yolanda Pérez",
+    "altUsernames": ["yolanda", "yolandaperez", "yolanda.perez@evently.com"],
+    "email": "yolanda.perez@evently.com",
+    "password": "joeldania",
+    "altPasswords": ["joeldania"],
+    "name": "Yolanda Pérez",
+    "role": "coordinator",
+    "roleLabel": "Coordinadora de Producción & Event-Day Mode",
+    "agency": "Yolanda Pérez Event Coordination",
+    "avatar": "Y",
+    "status": "active",
+    "permissions": [
+      "view_events",
+      "smart_seating_view",
+      "reception_qr",
+      "run_of_show",
+      "vendor_checkin",
+      "day_mode"
+    ],
+    "notes": "Acceso de campo para coordinación en vivo y recepción de invitados."
+  }
+]
