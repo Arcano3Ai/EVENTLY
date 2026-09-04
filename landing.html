@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVENTLY — Plataforma y Servicios de Operaciones de Eventos de Alta Gama</title>
+  <meta name="description" content="EVENTLY transforma la producción y logística de eventos masivos, corporativos y galas exclusivas con IA de asignación de asientos, control de acceso de alta velocidad y gestión presupuestaria en tiempo real.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-icon.svg">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="glow-orb glow-orb-3"></div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="landing.html" class="brand-wrapper" title="EVENTLY Inicio">
+          <img src="assets/logo/logo-full.svg" alt="EVENTLY — Event Operations OS">
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#tecnologia">Tecnología IA</a></li>
+          <li><a href="#producciones">Producciones</a></li>
+          <li><a href="#cotizador">Estimador</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="header-music-toggle" class="btn btn-ghost" style="padding: 0.5rem 0.85rem;" title="Música Ambiental">
+            <span id="header-music-icon">🎵</span>
+            <span style="font-size: 0.8rem; font-weight: 600;">Lounge</span>
+          </button>
+          <a href="index.html" class="btn btn-primary" id="btn-enter-app-nav">
+            <span>Consola de Operaciones</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="badge-hero">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+        <span>EVENT OPERATIONS OS & EXPERIENTIAL PRODUCTION</span>
+      </div>
+
+      <h1 class="hero-title">
+        Operación de Eventos con<br>
+        <span class="text-gradient">Precisión Quirúrgica & Inteligencia Artificial</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Desde la distribución matemática de mesas hasta el control de acceso en milisegundos y la dirección técnica minuto a minuto. EVENTLY orquesta cada detalle para galas, festivales y cumbres corporativas.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="index.html" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Iniciar Demostración en Vivo</span>
+        </a>
+        <a href="#servicios" class="btn btn-secondary" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
+          <span>Explorar Portafolio de Servicios</span>
+        </a>
+      </div>
+
+      <!-- Hero Video Player Showcase -->
+      <div class="hero-showcase-box">
+        <div class="showcase-video-wrapper">
+          <video id="hero-main-video" autoplay loop muted playsinline poster="assets/images/hero_gala_event.jpg">
+            <source src="assets/video/evently_intro.mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video HTML5.
+          </video>
+          <div class="video-overlay-badge">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: pulse 1.5s infinite;"></span>
+            <span>EVENTLY INTRO REEL · 720p HD AUDIO/VIDEO</span>
+            <button id="hero-video-audio-btn" style="background: none; border: none; color: #fff; cursor: pointer; margin-left: 8px; font-size: 0.8rem; text-decoration: underline;">
+              🔊 Activar Sonido
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Metrics Strip -->
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <div class="metric-val text-gradient">+99.9%</div>
+          <div class="metric-label">Uptime Operativo en Campo</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val text-gradient">&lt; 0.4s</div>
+          <div class="metric-label">Validación de Acreditación QR</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val text-gradient">100%</div>
+          <div class="metric-label">Resolución de Mesas por IA</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-val text-gradient">+85k</div>
+          <div class="metric-label">Invitados VIP Gestionados</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICIOS SECTION ==================== -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <span class="section-tag">Nuestros Servicios Integrales</span>
+      <h2 class="section-title">Infraestructura Tecnológica & Logística Integral</h2>
+      <p class="section-desc">
+        Soluciones modulares diseñadas para directores de producción, organizadores de festivales y corporativos internacionales.
+      </p>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+        <!-- Servicio 1: Smart Seating AI (Span 8) -->
+        <div class="bento-card col-span-8" id="card-service-seating">
+          <div>
+            <div class="bento-icon-wrapper bento-icon-indigo">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3>Smart Seating & Algoritmo de Compatibilidad IA</h3>
+            <p>
+              Optimizamos la disposición de invitados según jerarquías, intereses comunes, preferencias alimentarias y restricciones protocolares. Resolvemos esquemas de 1,000+ personas en menos de 4 segundos sin solapamientos.
+            </p>
+            
+            <div class="bento-interactive-preview" style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span style="font-size: 0.78rem; color: #818cf8; font-weight: 700; text-transform: uppercase;">Módulo Activo</span>
+                <div style="font-size: 0.95rem; font-weight: 600; color: #fff;">Smart Guest Control (AI Studio Engine)</div>
+              </div>
+              <button class="btn btn-secondary" id="btn-test-seating-preview" style="padding: 0.4rem 1rem; font-size: 0.82rem;">
+                ✨ Simular Algoritmo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 2: Field Event-Day Commander (Span 4) -->
+        <div class="bento-card col-span-4" id="card-service-field">
+          <div>
+            <div class="bento-icon-wrapper bento-icon-cyan">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Event-Day Commander</h3>
+            <p>
+              Consola táctica de alta velocidad para staff en sitio: escaneo QR con confirmación sonora, alertas de seguridad y monitoreo de aforo en vivo.
+            </p>
+            
+            <div class="bento-interactive-preview" style="text-align: center;">
+              <button class="btn btn-secondary" id="btn-trigger-qr-sound" style="width: 100%; justify-content: center; font-size: 0.82rem;">
+                🔊 Probar Tono Check-In
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 3: VIP Concierge & Fast-Track (Span 4) -->
+        <div class="bento-card col-span-4" id="card-service-vip">
+          <div>
+            <div class="bento-icon-wrapper bento-icon-gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </div>
+            <h3>VIP Concierge & Fast Pass</h3>
+            <p>
+              Recepción preferencial con invitaciones digitales dinámicas, notificación al host al momento del arribo y fanfarria protocolar.
+            </p>
+
+            <div class="bento-interactive-preview" style="text-align: center;">
+              <button class="btn btn-secondary" id="btn-trigger-vip-fanfare" style="width: 100%; justify-content: center; font-size: 0.82rem; color: #fbbf24; border-color: rgba(251, 191, 36, 0.4);">
+                🎺 Probar Fanfarria VIP
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 4: Audiovisual & Minute-by-Minute Run of Show (Span 4) -->
+        <div class="bento-card col-span-4" id="card-service-runofshow">
+          <div>
+            <div class="bento-icon-wrapper bento-icon-purple">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Run of Show & Minuta Técnica</h3>
+            <p>
+              Cronograma sincronizado segundo a segundo entre técnicos de iluminación, sonidistas, maestros de ceremonia y catering.
+            </p>
+
+            <div class="bento-interactive-preview">
+              <span style="font-size: 0.8rem; color: #34d399; font-weight: 700;">● EN SINCRONÍA</span>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Cero desfases entre discurso y show visual.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicio 5: Presupuesto & Auditoría de Proveedores (Span 4) -->
+        <div class="bento-card col-span-4" id="card-service-budget">
+          <div>
+            <div class="bento-icon-wrapper bento-icon-emerald">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Vendor & Budget War Room</h3>
+            <p>
+              Trazabilidad financiera de cada anticipo, liquidación contractual y control de costos imprevistos con alertas de desvío presupuestario.
+            </p>
+
+            <div class="bento-interactive-preview">
+              <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 700;">MÉTRICA PROMEDIO</span>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Ahorro de hasta un 18% en compras no planificadas.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCCIONES SHOWCASE ==================== -->
+  <section class="section" id="producciones">
+    <div class="container">
+      <span class="section-tag">Galería de Producciones</span>
+      <h2 class="section-title">Experiencias Diseñadas para Trascender</h2>
+      <p class="section-desc">
+        Nuestros estándares operativos aplicados en escenarios de escala masiva, alta dirección y celebraciones privadas exclusivas.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="assets/images/hero_gala_event.jpg" alt="Galas & Banquetes de Gala">
+          <div class="gallery-overlay">
+            <h4>Galas & Banquetes Reales</h4>
+            <span>Pabellones de Cristal · Protocolo Etiqueta Rigurosa</span>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="assets/images/concert_arena_stage.jpg" alt="Festivales & Conciertos Arena">
+          <div class="gallery-overlay">
+            <h4>Conciertos & Arenas Masivas</h4>
+            <span>Producción Escénica · +25k Espectadores Acreditados</span>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="assets/images/corporate_tech_summit.jpg" alt="Cumbres Tecnológicas Globales">
+          <div class="gallery-overlay">
+            <h4>Tech Summits & Congresos</h4>
+            <span>Múltiples Salones · Acreditación Biométrica y QR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ESTIMADOR / COTIZADOR ==================== -->
+  <section class="section" id="cotizador">
+    <div class="container">
+      <div class="bento-card col-span-12" style="background: linear-gradient(135deg, rgba(14, 19, 31, 0.95), rgba(22, 30, 49, 0.95));">
+        <div style="max-width: 780px; margin: 0 auto; text-align: center; width: 100%;">
+          <span class="section-tag">Estimador Interactivo de Operación</span>
+          <h2 class="section-title" style="margin-bottom: 1.5rem;">Calcula la Infraestructura para tu Próximo Evento</h2>
+          <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem;">
+            Ajusta los parámetros para conocer el aforo recomendado, terminales de acceso y módulos de IA necesarios.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: left; margin-bottom: 2rem;">
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Número Estimado de Asistentes:</label>
+              <input type="range" id="estimator-guests-slider" min="100" max="5000" step="50" value="750" style="width: 100%; accent-color: var(--primary);">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; margin-top: 0.4rem;">
+                <span id="slider-guests-val">750 invitados</span>
+                <span>Max: 5,000</span>
+              </div>
+            </div>
+
+            <div>
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Tipo de Producción:</label>
+              <select id="estimator-type-select" style="width: 100%; background: var(--bg-surface-elevated); color: #fff; border: 1px solid var(--border-subtle); padding: 0.65rem 1rem; border-radius: var(--radius-sm); font-family: inherit;">
+                <option value="gala">Gala o Banquete Protocolar</option>
+                <option value="summit">Cumbre Corporativa / Tech Summit</option>
+                <option value="arena">Festival / Concierto en Vivo</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="background: rgba(7, 9, 14, 0.6); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem;">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Mesas / Distribución</div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: #fff;" id="est-tables-count">75 Mesas</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Puntos de Check-In</div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-cyan);" id="est-gates-count">4 Terminales QR</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Tiempo de Acreditación</div>
+              <div style="font-size: 1.5rem; font-weight: 800; color: #34d399;" id="est-time-count">~ 18 Minutos</div>
+            </div>
+          </div>
+
+          <a href="index.html" class="btn btn-primary" style="padding: 0.85rem 2.25rem;">
+            <span>Crear este Evento en la Consola</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA BANNER ==================== -->
+  <div class="container">
+    <div class="cta-banner">
+      <h2>¿Listo para Elevar la Operación de tus Eventos?</h2>
+      <p>
+        Accede hoy a la plataforma operativa unificada o solicita una sesión guiada con nuestro equipo de ingenieros de producción.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="index.html" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem;">
+          Ingresar al Workspace
+        </a>
+        <button class="btn btn-secondary" id="btn-schedule-demo-cta" style="padding: 0.85rem 2rem; font-size: 1rem;">
+          Agendar Presentación VIP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer" id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/logo-full.svg" alt="EVENTLY Logo" style="height: 38px;">
+          <p>
+            The Premier Event Operations OS. Arquitectura de software, logística en campo e inteligencia relacional para experiencias inolvidables.
+          </p>
+          <div style="margin-top: 1.25rem; font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">
+            Un producto impulsado por Arcano Solutions & AI Studio.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Plataforma</h5>
+          <ul>
+            <li><a href="index.html">Dashboard General</a></li>
+            <li><a href="index.html">Smart Guest Control</a></li>
+            <li><a href="index.html">Control de Accesos</a></li>
+            <li><a href="index.html">Presupuesto & Proveedores</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Smart Seating IA</a></li>
+            <li><a href="#servicios">Event-Day Mode</a></li>
+            <li><a href="#servicios">VIP Concierge</a></li>
+            <li><a href="#servicios">Dirección de Escenario</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Assets & Legal</h5>
+          <ul>
+            <li><a href="assets/logo/logo-full.svg" download>Logo Kit (SVG)</a></li>
+            <li><a href="assets/video/evently_intro.mp4" download>Reel Oficial (MP4)</a></li>
+            <li><a href="assets/music/event_lounge_ambient.wav" download>Soundtrack (WAV)</a></li>
+            <li><a href="#">Privacidad y Términos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 EVENTLY by Arcano Solutions. Todos los derechos reservados.</div>
+        <div>Diseñado con estándares de ingeniería Senior Principal · Monterrey, México.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Ambient Lounge Audio Widget -->
+  <div class="floating-audio-widget" id="floating-audio-btn" title="Activar/Pausar música ambiental Lounge">
+    <div class="audio-pulse-dot" id="audio-pulse-indicator"></div>
+    <span class="audio-widget-text" id="audio-widget-label">Música: Lounge Ambient</span>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="ambient-audio-player" loop preload="auto">
+    <source src="assets/music/event_lounge_ambient.wav" type="audio/wav">
+  </audio>
+
+  <!-- Interactive Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Audio Engine
+      const ambientPlayer = document.getElementById('ambient-audio-player');
+      const floatAudioBtn = document.getElementById('floating-audio-btn');
+      const headerMusicBtn = document.getElementById('header-music-toggle');
+      const pulseDot = document.getElementById('audio-pulse-indicator');
+      const widgetLabel = document.getElementById('audio-widget-label');
+      let isPlaying = false;
+
+      function toggleAmbientMusic() {
+        if (!ambientPlayer) return;
+        if (isPlaying) {
+          ambientPlayer.pause();
+          isPlaying = false;
+          pulseDot.classList.add('paused');
+          widgetLabel.textContent = "Música: En Pausa";
+          headerMusicBtn.style.color = "var(--text-muted)";
+        } else {
+          ambientPlayer.volume = 0.35;
+          ambientPlayer.play().then(() => {
+            isPlaying = true;
+            pulseDot.classList.remove('paused');
+            widgetLabel.textContent = "Música: Reproduciendo";
+            headerMusicBtn.style.color = "#ec4899";
+          }).catch(err => {
+            console.warn('Autoplay prevented:', err);
+          });
+        }
+      }
+
+      if (floatAudioBtn) floatAudioBtn.addEventListener('click', toggleAmbientMusic);
+      if (headerMusicBtn) headerMusicBtn.addEventListener('click', toggleAmbientMusic);
+
+      // Hero Video Audio Unmute
+      const heroVideo = document.getElementById('hero-main-video');
+      const heroAudioBtn = document.getElementById('hero-video-audio-btn');
+      if (heroVideo && heroAudioBtn) {
+        heroAudioBtn.addEventListener('click', () => {
+          if (heroVideo.muted) {
+            heroVideo.muted = false;
+            heroAudioBtn.textContent = "🔇 Silenciar Video";
+          } else {
+            heroVideo.muted = true;
+            heroAudioBtn.textContent = "🔊 Activar Sonido";
+          }
+        });
+      }
+
+      // SFX Audio Helpers
+      function playSFX(src) {
+        try {
+          const sfx = new Audio(src);
+          sfx.volume = 0.6;
+          sfx.play().catch(e => console.log(e));
+        } catch(e) {}
+      }
+
+      const btnQrSound = document.getElementById('btn-trigger-qr-sound');
+      if (btnQrSound) {
+        btnQrSound.addEventListener('click', () => {
+          playSFX('assets/music/checkin_beep_success.wav');
+        });
+      }
+
+      const btnVipSound = document.getElementById('btn-trigger-vip-fanfare');
+      if (btnVipSound) {
+        btnVipSound.addEventListener('click', () => {
+          playSFX('assets/music/vip_arrival_fanfare.wav');
+        });
+      }
+
+      const btnSeatingTest = document.getElementById('btn-test-seating-preview');
+      if (btnSeatingTest) {
+        btnSeatingTest.addEventListener('click', () => {
+          playSFX('assets/music/checkin_beep_success.wav');
+          btnSeatingTest.textContent = "✓ 124 Mesas Optimizadas";
+          setTimeout(() => btnSeatingTest.textContent = "✨ Simular Algoritmo", 2500);
+        });
+      }
+
+      // Estimator calculation
+      const guestsSlider = document.getElementById('estimator-guests-slider');
+      const guestsVal = document.getElementById('slider-guests-val');
+      const tablesCount = document.getElementById('est-tables-count');
+      const gatesCount = document.getElementById('est-gates-count');
+      const timeCount = document.getElementById('est-time-count');
+      const typeSelect = document.getElementById('estimator-type-select');
+
+      function updateEstimator() {
+        const guests = parseInt(guestsSlider.value, 10);
+        guestsVal.textContent = `${guests.toLocaleString()} invitados`;
+        
+        const type = typeSelect.value;
+        const seatsPerTable = type === 'gala' ? 10 : 8;
+        const tables = Math.ceil(guests / seatsPerTable);
+        tablesCount.textContent = `${tables} Mesas`;
+
+        const gates = Math.max(2, Math.ceil(guests / 300));
+        gatesCount.textContent = `${gates} Terminales QR`;
+
+        const minutes = Math.ceil((guests / (gates * 14)));
+        timeCount.textContent = `~ ${minutes} Minutos`;
+      }
+
+      if (guestsSlider) guestsSlider.addEventListener('input', updateEstimator);
+      if (typeSelect) typeSelect.addEventListener('change', updateEstimator);
+
+      // Schedule Demo CTA
+      const demoBtn = document.getElementById('btn-schedule-demo-cta');
+      if (demoBtn) {
+        demoBtn.addEventListener('click', () => {
+          alert('¡Gracias por tu interés en EVENTLY! Redirigiendo a la consola de operaciones...');
+          window.location.href = 'index.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVENTLY — The Event Operations Platform</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-icon.svg">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="app-layout">
+  <!-- ==================== SIDEBAR ==================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="#" class="brand-logo" id="brand-logo-btn">
+        <img src="assets/logo/logo-icon.svg" alt="EVENTLY Logo" style="width: 38px; height: 38px; border-radius: 10px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);">
+        <div>
+          <span class="brand-name">EVENTLY</span>
+          <span class="brand-subtitle">Operations OS</span>
+        </div>
+      </a>
+      <button class="sidebar-toggle-btn" id="sidebar-toggle" title="Colapsar Sidebar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="sidebar-scroll">
+      <!-- Group: Main -->
+      <div class="nav-group">
+        <div class="nav-group-title">General</div>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-item-btn active" data-view="view-dashboard">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+              <span class="nav-label">Dashboard</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-events">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span class="nav-label">My Events</span>
+              <span class="badge-pill" id="events-total-badge">5</span>
+            </button>
+          </li>
+          <li>
+            <a href="landing.html" class="nav-item-btn" style="text-decoration: none; color: inherit; width: 100%;" target="_self">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span class="nav-label">Landing Servicios</span>
+              <span class="badge-pill" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">Web</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Group: Active Event Workspace -->
+      <div class="nav-group">
+        <div class="nav-group-title">Workspace Evento</div>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-item-btn" data-view="view-guests">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span class="nav-label">Guests</span>
+              <span class="badge-pill">387</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-invitations">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span class="nav-label">Invitations</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-seating">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span class="nav-label">Seating</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-access-control">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span class="nav-label">Access Control</span>
+              <span class="badge-pill" style="background: rgba(16,185,129,0.2); color:#10b981;">Live</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-vendors">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span class="nav-label">Vendors</span>
+              <span class="badge-pill">18</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-tasks">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <span class="nav-label">Tasks</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-timeline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="nav-label">Timeline</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-budget">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <span class="nav-label">Budget</span>
+            </button>
+          </li>
+          <li>
+            <button class="nav-item-btn" data-view="view-reports">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span class="nav-label">Reports</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Group: AI Engine -->
+      <div class="nav-group">
+        <div class="nav-group-title">AI Studio Engine</div>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-item-btn" data-view="view-smart-control" id="nav-smart-control">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span class="nav-label">Smart Guest Control</span>
+              <span class="badge-pill" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25)); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4);">AI Studio</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Group: Tools -->
+      <div class="nav-group">
+        <div class="nav-group-title">Operación Directa</div>
+        <ul class="nav-list">
+          <li>
+            <button class="nav-item-btn" id="open-day-mode-nav">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+              <span class="nav-label" style="color: #fbbf24; font-weight: 700;">Event-Day Mode</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== MAIN WRAPPER ==================== -->
+  <div class="main-wrapper">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <!-- Event Switcher -->
+        <div class="event-selector-dropdown">
+          <button class="event-selector-btn" id="event-selector-btn">
+            <span class="status-dot-live"></span>
+            <span id="current-event-title">HUGGIE FEST 2026</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Global Search -->
+        <div class="global-search-bar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="global-search-input" placeholder="Buscar invitado, mesa, proveedor...">
+          <span class="search-shortcut-badge">⌘K</span>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="day-mode-trigger-btn" id="trigger-day-mode-btn">
+          <span>⚡ EVENT DAY MODE</span>
+        </button>
+
+        <button class="top-action-btn" id="btn-ambient-music-toggle" title="Música Lounge Ambiental (Play/Pause)" style="color: #ec4899; border-color: rgba(236, 72, 153, 0.3); background: rgba(236, 72, 153, 0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </button>
+
+        <button class="top-action-btn" id="btn-assets-vault" title="Media & Assets Vault" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.08);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        </button>
+
+        <button class="top-action-btn" id="notif-bell-btn" title="Notificaciones">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="notif-badge-count">4</span>
+        </button>
+
+        <div class="user-profile-btn" id="user-profile-btn">
+          <div class="user-avatar">S</div>
+          <span style="font-size: 0.88rem; font-weight: 600;">Sergio</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="view-content-area" id="main-content">
+
+      <!-- ==================== VIEW: DASHBOARD ==================== -->
+      <section class="view-section active" id="view-dashboard">
+        <!-- Event Hero Banner -->
+        <div class="event-hero-banner">
+          <div class="hero-info-left">
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a5b4fc; font-weight: 700;">Active Event Overview</span>
+            <h2 id="dash-event-title">HUGGIE FEST 2026</h2>
+            <div class="hero-meta-tags">
+              <span class="hero-meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                29 AUG 2026 · Saturday · 8:00 PM
+              </span>
+              <span class="hero-meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Hacienda San José, Monterrey
+              </span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn-secondary" id="btn-hero-watch-intro" style="display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Ver Video Intro
+            </button>
+            <button class="btn-primary" id="btn-quick-checkin">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/></svg>
+              Operación de Acceso
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Invited</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            </div>
+            <div class="kpi-number">450</div>
+            <div class="kpi-subtext">Total de lista autorizada</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Confirmed (RSVP)</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="kpi-number" style="color: var(--success);">387</div>
+            <div class="kpi-subtext">86% de confirmación positiva</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Checked In</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--info)" stroke-width="2"><path d="M9 11l3 3L22 4"/><rect x="3" y="3" width="7" height="7"/></svg>
+            </div>
+            <div class="kpi-number" style="color: #38bdf8;">241</div>
+            <div class="kpi-subtext">62.2% en el recinto</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-label">Vendors</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+            </div>
+            <div class="kpi-number">18</div>
+            <div class="kpi-subtext">14 activos · 2 pagos pend.</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Split Grid -->
+        <div class="dashboard-grid-2col">
+          <!-- Left: RSVP & Attendance Analytics -->
+          <div class="card-panel">
+            <div class="panel-title-bar">
+              <h3 class="panel-title">RSVP & Asistencia Operativa</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">En tiempo real</span>
+            </div>
+
+            <div class="rsvp-progress-wrapper">
+              <div class="progress-multi-bar">
+                <div class="bar-confirmed" style="width: 86%;"></div>
+                <div class="bar-pending" style="width: 8.5%;"></div>
+                <div class="bar-declined" style="width: 5.5%;"></div>
+              </div>
+
+              <div class="rsvp-legend-grid">
+                <div class="legend-stat">
+                  <span class="legend-stat-val" style="color: var(--success);">387</span>
+                  <span class="legend-stat-lbl">Confirmed</span>
+                </div>
+                <div class="legend-stat">
+                  <span class="legend-stat-val" style="color: var(--warning);">38</span>
+                  <span class="legend-stat-lbl">Pending</span>
+                </div>
+                <div class="legend-stat">
+                  <span class="legend-stat-val" style="color: var(--danger);">25</span>
+                  <span class="legend-stat-lbl">Declined</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Seating Summary -->
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: 1rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem;">
+                <span style="color: var(--text-secondary);">Capacidad en Mesas Asignadas</span>
+                <span style="font-weight: 700; color: #fff;">342 / 387 Asientos (88.3%)</span>
+              </div>
+              <div style="height: 6px; background: var(--bg-surface-elevated); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 88.3%; height: 100%; background: var(--accent-gradient);"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Status de Proveedores y Próxima Actividad -->
+          <div class="card-panel">
+            <div class="panel-title-bar">
+              <h3 class="panel-title">Status Proveedores & Setup</h3>
+              <button class="btn-secondary" style="padding: 3px 8px; font-size: 0.75rem;" onclick="app.switchView('view-vendors')">Ver Todos</button>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+                <div>
+                  <div style="font-weight: 600; font-size: 0.88rem; color:#fff;">Luz & Eventos Pro</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Llegada: 3:00 PM · Setup listo</div>
+                </div>
+                <span class="badge-tag badge-confirmed">Confirmed</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+                <div>
+                  <div style="font-weight: 600; font-size: 0.88rem; color:#fff;">Gourmet Banquetes MX</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Llegada: 12:00 PM · En servicio</div>
+                </div>
+                <span class="badge-tag badge-confirmed">Confirmed</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+                <div>
+                  <div style="font-weight: 600; font-size: 0.88rem; color:#fff;">Visual Memories Cinema</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Saldo vencido: $20,000</div>
+                </div>
+                <span class="badge-tag badge-pending">Payment Due</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Schedule Strip -->
+        <div class="card-panel">
+          <div class="panel-title-bar">
+            <h3 class="panel-title">Próximos Momentos del Timeline</h3>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Hora actual del recinto: 07:15 PM</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div style="padding: 0.8rem; border-left: 3px solid var(--success); background: var(--bg-surface-elevated); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--success);">06:30 PM (ACTIVO)</div>
+              <div style="font-weight: 700; color: #fff;">Guest Arrival & Cocktails</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Check-in continuo en Puerta Principal</div>
+            </div>
+
+            <div style="padding: 0.8rem; border-left: 3px solid var(--accent-primary); background: var(--bg-surface-elevated); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: #818cf8;">07:30 PM (EN 15 MIN)</div>
+              <div style="font-weight: 700; color: #fff;">Ceremony</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Capilla de San José</div>
+            </div>
+
+            <div style="padding: 0.8rem; border-left: 3px solid var(--text-muted); background: var(--bg-surface-elevated); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
+              <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">08:30 PM</div>
+              <div style="font-weight: 700; color: #fff;">Dinner Service</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">Salón Imperial · 4 Tiempos</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: MY EVENTS ==================== -->
+      <section class="view-section" id="view-events">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>My Events</h1>
+            <p>Monitorea y administra todos tus proyectos y operaciones simultáneas</p>
+          </div>
+          <div class="header-actions">
+            <div class="table-filters">
+              <span class="filter-chip active">All Events</span>
+              <span class="filter-chip">Active</span>
+              <span class="filter-chip">Upcoming</span>
+              <span class="filter-chip">Completed</span>
+            </div>
+            <button class="btn-primary" id="btn-open-create-wizard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              + Create Event
+            </button>
+          </div>
+        </div>
+
+        <div class="events-cards-grid" id="events-list-grid">
+          <!-- Renders dynamically with app.js -->
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: GUESTS ==================== -->
+      <section class="view-section" id="view-guests">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Guest Management</h1>
+            <p>Control central de invitados, grupos, asignación de mesas y acreditaciones</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-secondary" id="btn-export-guests">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export CSV
+            </button>
+            <button class="btn-primary" id="btn-add-guest">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              + Add Guest
+            </button>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <div class="table-toolbar">
+            <input type="text" class="table-search-input" id="guest-table-search" placeholder="Buscar por nombre, grupo o ID...">
+            <div class="table-filters">
+              <span class="filter-chip active">Todos (387)</span>
+              <span class="filter-chip">Confirmed (387)</span>
+              <span class="filter-chip">Checked In (241)</span>
+              <span class="filter-chip">Pending (38)</span>
+            </div>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="custom-table" id="guests-table">
+              <thead>
+                <tr>
+                  <th>Guest</th>
+                  <th>ID</th>
+                  <th>Group</th>
+                  <th>Party</th>
+                  <th>RSVP</th>
+                  <th>Table</th>
+                  <th>Seat</th>
+                  <th>QR Pass</th>
+                  <th>Check-In</th>
+                </tr>
+              </thead>
+              <tbody id="guests-table-body">
+                <!-- Renders dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: INVITATIONS ==================== -->
+      <section class="view-section" id="view-invitations">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Invitations & Digital Passes</h1>
+            <p>Diseño y monitoreo de aperturas, confirmaciones digitales y credenciales QR</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Enviar Recordatorio Masivo
+            </button>
+          </div>
+        </div>
+
+        <!-- Invitation KPIs -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Invitaciones Enviadas</div>
+            <div class="kpi-number">450</div>
+            <div class="kpi-subtext">100% canal digital</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Abiertas / Vistas</div>
+            <div class="kpi-number" style="color: #38bdf8;">421</div>
+            <div class="kpi-subtext">93.5% open rate</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Confirmaciones RSVP</div>
+            <div class="kpi-number" style="color: var(--success);">387</div>
+            <div class="kpi-subtext">387 aceptadas · 25 declinadas</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Pendientes</div>
+            <div class="kpi-number" style="color: var(--warning);">38</div>
+            <div class="kpi-subtext">Cierre en 48 horas</div>
+          </div>
+        </div>
+
+        <!-- Visual Invitation Builder Preview -->
+        <div class="card-panel">
+          <div class="panel-title-bar">
+            <h3 class="panel-title">Invitation Visual Builder Preview</h3>
+            <span class="badge-tag badge-qr-active">Live Interactive Template</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2rem; background: var(--bg-surface-elevated); padding: 1.5rem; border-radius: var(--radius-md);">
+            <!-- Component toolbox -->
+            <div style="border-right: 1px solid var(--border-subtle); padding-right: 1.5rem;">
+              <h4 style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.75rem;">Componentes</h4>
+              <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>🔤 Header & Typography</span></div>
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>🖼️ Hero Image / Video</span></div>
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>⏱️ Countdown Timer</span></div>
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>✉️ Interactive RSVP Form</span></div>
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>📍 Venue Map & Coordinates</span></div>
+                <div class="btn-secondary" style="justify-content: flex-start; cursor: grab;"><span>▣ Dynamic QR Access Pass</span></div>
+              </div>
+            </div>
+
+            <!-- Preview Screen Mockup -->
+            <div style="display: flex; justify-content: center;">
+              <div style="width: 320px; background: #030712; border: 2px solid var(--border-strong); border-radius: 28px; padding: 1.5rem; box-shadow: var(--shadow-lg); text-align: center;">
+                <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem;">YOU ARE INVITED TO</div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem;">HUGGIE FEST 2026</h3>
+                <p style="font-size: 0.75rem; color: #c7d2fe; margin-bottom: 1.25rem;">Saturday, August 29 · 8:00 PM</p>
+
+                <div style="background: var(--bg-surface); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 1rem;">
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">COUNTDOWN</div>
+                  <div style="font-size: 1.1rem; font-weight: 800; color: var(--accent-primary);">12d : 08h : 42m</div>
+                </div>
+
+                <div style="background: #fff; border-radius: var(--radius-md); padding: 1rem; color: #000; margin-bottom: 1rem;">
+                  <div style="font-weight: 800; font-size: 0.85rem;">DIGITAL ACCESS PASS</div>
+                  <div style="margin: 0.5rem 0;">
+                    <!-- Simulated QR -->
+                    <div style="width: 90px; height: 90px; margin: 0 auto; background: repeating-conic-gradient(#000 0% 25%, #fff 0% 50%) 50% / 15px 15px; border-radius: 6px;"></div>
+                  </div>
+                  <div style="font-size: 0.7rem; font-weight: 600; color: #475569;">JUAN PÉREZ · 4 GUESTS</div>
+                  <div style="font-size: 0.65rem; color: #64748b;">MESA 18 · SALÓN A</div>
+                </div>
+
+                <button class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.8rem;">Confirm RSVP</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: SEATING ==================== -->
+      <section class="view-section" id="view-seating">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Seating Plan & Layout</h1>
+            <p>Distribución espacial del recinto, capacidad de mesas y asignación de invitados</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-secondary" id="btn-smart-arrange">
+              <span>✨ Smart Seating Simulator</span>
+            </button>
+            <button class="btn-primary" id="btn-add-table">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              + Agregar Mesa
+            </button>
+          </div>
+        </div>
+
+        <div class="venue-floor-layout" id="venue-layout-container">
+          <div class="venue-stage">ESCENARIO PRINCIPAL & CABINA DJ</div>
+          
+          <div class="venue-dancefloor">Pista de Baile</div>
+
+          <div class="tables-cluster" id="tables-render-grid">
+            <!-- Rendered via app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: ACCESS CONTROL ==================== -->
+      <section class="view-section" id="view-access-control">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Smart Guest Control & Fast Check-In</h1>
+            <p>Terminal operativo para escaneo QR instantáneo, validación de cupo y ubicación en sala</p>
+          </div>
+          <div class="header-actions">
+            <span class="badge-tag badge-confirmed">Puerta 1: Conectada</span>
+          </div>
+        </div>
+
+        <div class="access-control-grid">
+          <!-- Left: QR Simulator -->
+          <div class="qr-scanner-card">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">QR Scanner Operativo</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Apunta el código del invitado o usa la simulación</p>
+
+            <div class="scanner-viewfinder">
+              <div class="laser-scan-line"></div>
+              <!-- Inner simulated QR -->
+              <div style="width: 110px; height: 110px; background: repeating-conic-gradient(#38bdf8 0% 25%, #0f172a 0% 50%) 50% / 18px 18px; border-radius: 8px; opacity: 0.7;"></div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn-primary" id="btn-simulate-scan">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Simular Escaneo (Juan Pérez)
+              </button>
+              <button class="btn-secondary" id="btn-manual-search-checkin">Búsqueda Manual</button>
+            </div>
+          </div>
+
+          <!-- Right: Scan Result & Guest Navigator -->
+          <div class="guest-navigator-card" id="scan-result-box">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+              <span style="font-size: 1.2rem; color: var(--success);">✓</span>
+              <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--success); letter-spacing: 0.05em;">ACCESS APPROVED</h3>
+            </div>
+
+            <h2 style="font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 0.2rem;" id="nav-guest-name">Juan Pérez</h2>
+            <div style="font-size: 0.85rem; color: #93c5fd; margin-bottom: 1.25rem;">
+              <span id="nav-guest-party">4 Invitados Autorizados</span> · Pase ID: <span id="nav-guest-id">EV-002381</span>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 1.2rem; margin-bottom: 1.2rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                <span style="color: var(--text-muted); font-size: 0.8rem;">Mesa Asignada</span>
+                <span style="font-weight: 800; color: #fff; font-size: 1.1rem;" id="nav-table-name">MESA 18</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted); font-size: 0.8rem;">Asientos</span>
+                <span style="font-weight: 600; color: #c7d2fe;" id="nav-seat-numbers">B1 · B2 · B3 · B4</span>
+              </div>
+            </div>
+
+            <!-- Visual Direction Guide -->
+            <div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Guest Navigator (Ubicación en recinto)</div>
+              <div class="nav-direction-arrow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                <span>SALÓN A · 14 metros a la derecha pasando la fuente</span>
+              </div>
+            </div>
+
+            <button class="btn-primary" style="width: 100%; margin-top: 1.5rem; justify-content: center;" id="btn-confirm-checkin-action">
+              Completar Check-In y Registrar Entrada
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: VENDORS ==================== -->
+      <section class="view-section" id="view-vendors">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Vendors & Operations</h1>
+            <p>Directorio, contratos, horarios de montaje y balance de pagos de proveedores</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-primary" id="btn-add-vendor">+ Registrar Proveedor</button>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <div class="table-toolbar">
+            <input type="text" class="table-search-input" placeholder="Buscar proveedor...">
+            <div class="table-filters">
+              <span class="filter-chip active">Todos (18)</span>
+              <span class="filter-chip">Confirmed (14)</span>
+              <span class="filter-chip">Pending (2)</span>
+              <span class="filter-chip">Payment Due (2)</span>
+            </div>
+          </div>
+
+          <table class="custom-table" id="vendors-table">
+            <thead>
+              <tr>
+                <th>Proveedor</th>
+                <th>Categoría</th>
+                <th>Contacto</th>
+                <th>Status</th>
+                <th>Llegada</th>
+                <th>Montaje</th>
+                <th>Costo Total</th>
+                <th>Pagado</th>
+                <th>Balance</th>
+              </tr>
+            </thead>
+            <tbody id="vendors-table-body">
+              <!-- Rendered via app.js -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: TASKS ==================== -->
+      <section class="view-section" id="view-tasks">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Task Management</h1>
+            <p>Monitoreo operativo de pendientes críticos y asignaciones de equipo</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-primary">+ Nueva Tarea</button>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;" id="tasks-board-grid">
+          <!-- Rendered via app.js -->
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: TIMELINE ==================== -->
+      <section class="view-section" id="view-timeline">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Event Timeline (Minute by Minute)</h1>
+            <p>Minuta y cronograma operativo del evento minuto a minuto</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-secondary">Exportar Minuta PDF</button>
+            <button class="btn-primary">+ Agregar Momento</button>
+          </div>
+        </div>
+
+        <div class="card-panel" style="max-width: 800px;">
+          <div class="timeline-vertical" id="event-timeline-list">
+            <!-- Rendered via app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: BUDGET ==================== -->
+      <section class="view-section" id="view-budget">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Event Budget & Financials</h1>
+            <p>Control de presupuesto comprometido, pagos realizados y balance por categoría</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-primary">+ Registrar Gasto</button>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Presupuesto Total</div>
+            <div class="kpi-number">$450,000</div>
+            <div class="kpi-subtext">Meta autorizada por cliente</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Comprometido</div>
+            <div class="kpi-number" style="color: var(--accent-primary);">$387,000</div>
+            <div class="kpi-subtext">Contratos firmados (86%)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Pagado a Proveedores</div>
+            <div class="kpi-number" style="color: var(--success);">$215,000</div>
+            <div class="kpi-subtext">47.7% liquidado</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Remanente Disponible</div>
+            <div class="kpi-number" style="color: var(--warning);">$63,000</div>
+            <div class="kpi-subtext">Colchón para imprevistos</div>
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <h3 class="panel-title" style="margin-bottom: 1rem;">Distribución por Categorías</h3>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                <span style="font-weight: 600;">Catering & Banquetes</span>
+                <span>$165,000 (100% Pagado)</span>
+              </div>
+              <div style="height: 8px; background: var(--bg-surface-elevated); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: var(--success);"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                <span style="font-weight: 600;">Decoración Floral & Mobiliario</span>
+                <span>$52,000 ($30,000 pagados · $22,000 balance)</span>
+              </div>
+              <div style="height: 8px; background: var(--bg-surface-elevated); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 57%; height: 100%; background: var(--warning);"></div>
+              </div>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.3rem;">
+                <span style="font-weight: 600;">Iluminación, Audio & Escenario</span>
+                <span>$63,000 ($48,000 pagados · $15,000 balance)</span>
+              </div>
+              <div style="height: 8px; background: var(--bg-surface-elevated); border-radius: var(--radius-full); overflow: hidden;">
+                <div style="width: 76%; height: 100%; background: var(--accent-primary);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: REPORTS ==================== -->
+      <section class="view-section" id="view-reports">
+        <div class="view-header">
+          <div class="view-title-group">
+            <h1>Operational Reports</h1>
+            <p>Métricas consolidadas de asistencia, curvas de entrada y balance final</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn-primary" id="btn-export-pdf-report">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Exportar Reporte Ejecutivo PDF
+            </button>
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <h3 class="panel-title" style="margin-bottom: 1.25rem;">Auditoría de Operaciones en Recinto</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: center;">
+            <div style="padding: 1rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+              <div style="font-size: 1.8rem; font-weight: 800; color: #fff;">387</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Asistencia Confirmada</div>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--success);">241</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Check-Ins Completados</div>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--info);">3.2s</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Tiempo promedio por scan QR</div>
+            </div>
+            <div style="padding: 1rem; background: var(--bg-surface-elevated); border-radius: var(--radius-sm);">
+              <div style="font-size: 1.8rem; font-weight: 800; color: #a855f7;">0</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Accesos no autorizados</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: SMART GUEST CONTROL (AI STUDIO) ==================== -->
+      <section class="view-section" id="view-smart-control">
+        <div class="view-header" style="align-items: flex-start;">
+          <div class="view-title-group">
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem;">
+              <h1 style="background: linear-gradient(135deg, #fff 40%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smart Guest Control & Seating AI</h1>
+              <span class="badge-pill" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.6rem;">Google AI Studio</span>
+            </div>
+            <p>Módulo autónomo para distribución automatizada de asientos con IA, mapa táctico de mesas y terminal de recepción QR móvil.</p>
+          </div>
+          <div class="header-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-secondary" id="btn-smart-open-tab" title="Abrir en pestaña independiente">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Abrir Completo
+            </button>
+            <a href="http://localhost:3000" target="_blank" class="btn-secondary" id="btn-smart-open-dev" title="Abrir servidor dev Vite (:3000)" style="text-decoration: none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Dev :3000
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Route Switcher Bar -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); align-items: center;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.4rem;">Vistas del Módulo:</span>
+          <button class="btn-pill-filter active" data-smart-route="#/admin/dashboard">Admin Dashboard</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/smart-seating">✨ Smart Seating (IA)</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/tables">Mapa de Mesas</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/guests">Invitados & Perfiles</button>
+          <button class="btn-pill-filter" data-smart-route="#/reception" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4);">📱 Recepción / QR</button>
+          <button class="btn-pill-filter" data-smart-route="#/login" style="margin-left: auto;">Cambiar Rol</button>
+        </div>
+
+        <!-- Embedded React App Frame -->
+        <div style="position: relative; width: 100%; height: 860px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.6); background: #09090b;">
+          <iframe id="smart-control-iframe" src="./smart-guest-control/dist/index.html#/admin/dashboard" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ==================== GUEST DETAIL DRAWER ==================== -->
+<div class="drawer-backdrop" id="guest-drawer-backdrop"></div>
+<aside class="drawer-panel" id="guest-drawer">
+  <div class="drawer-header">
+    <div>
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;" id="drawer-guest-name">Juan Pérez</h3>
+      <span style="font-size: 0.75rem; color: var(--text-muted);" id="drawer-guest-id">EV-002381</span>
+    </div>
+    <button class="close-btn" id="close-guest-drawer-btn">✕</button>
+  </div>
+  <div class="drawer-body" id="guest-drawer-content">
+    <!-- Populated via app.js -->
+  </div>
+</aside>
+
+<!-- ==================== CREATE EVENT WIZARD MODAL ==================== -->
+<div class="modal-overlay" id="create-event-modal">
+  <div class="modal-card">
+    <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">Create New Event</h3>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">Asistente guiado de configuración</span>
+      </div>
+      <button class="close-btn" id="close-event-modal-btn">✕</button>
+    </div>
+
+    <div style="padding: 1.5rem;">
+      <!-- Step progress indicators -->
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.75rem; color: var(--text-muted);">
+        <span style="color: var(--accent-primary); font-weight: 700;">1. Información</span>
+        <span>2. Tipo</span>
+        <span>3. Fecha/Lugar</span>
+        <span>4. Invitados</span>
+        <span>5. Ajustes</span>
+        <span>6. Revisión</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">Nombre del Evento</label>
+          <input type="text" id="wizard-event-name" class="table-search-input" style="width: 100%;" placeholder="Ej. Gala Anual de Innovación 2026">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">Tipo de Evento</label>
+            <select class="table-search-input" style="width: 100%;" id="wizard-event-type">
+              <option>Boda / Wedding</option>
+              <option>Congreso / Convención</option>
+              <option>Corporativo / Gala</option>
+              <option>Graduación</option>
+              <option>XV Años / Fiesta Privada</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">Aforo Estimado (Invitados)</label>
+            <input type="number" class="table-search-input" style="width: 100%;" value="350">
+          </div>
+        </div>
+        <div>
+          <label style="font-size: 0.8rem; color: var(--text-secondary); display: block; margin-bottom: 0.4rem;">Sede / Venue</label>
+          <input type="text" class="table-search-input" style="width: 100%;" placeholder="Ej. Club Industrial, San Pedro Garza García">
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 1rem 1.5rem; border-top: 1px solid var(--border-subtle); display: flex; justify-content: flex-end; gap: 0.75rem;">
+      <button class="btn-secondary" id="cancel-event-modal-btn">Cancelar</button>
+      <button class="btn-primary" id="save-new-event-btn">Guardar Evento & Comenzar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== EVENT-DAY MODE (FULLSCREEN OPERATIONAL) ==================== -->
+<div id="event-day-overlay">
+  <div class="day-mode-header">
+    <div>
+      <span style="font-size: 0.8rem; color: #fbbf24; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;">⚡ EVENT DAY MODE · MODO OPERATIVO EN VIVO</span>
+      <h1 style="font-size: 2rem; font-weight: 800; color: #fff;" id="day-mode-title">HUGGIE FEST 2026</h1>
+      <p style="font-size: 0.9rem; color: #94a3b8;">Hacienda San José · Staff Conectado: 12 miembros</p>
+    </div>
+    <button class="btn-secondary" id="exit-day-mode-btn" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+      ✕ Salir del Modo Operativo
+    </button>
+  </div>
+
+  <div class="day-mode-stats">
+    <div class="day-mode-stat-box">
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">CHECKED IN</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: var(--success);" id="day-checkedin-count">241 / 387</div>
+      <div style="font-size: 0.75rem; color: #94a3b8;">62.2% en sala</div>
+    </div>
+    <div class="day-mode-stat-box">
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">SIGUIENTE MOMENTO</div>
+      <div style="font-size: 1.8rem; font-weight: 800; color: #38bdf8;">Dinner · 8:30 PM</div>
+      <div style="font-size: 0.75rem; color: #94a3b8;">En 1h 15m</div>
+    </div>
+    <div class="day-mode-stat-box">
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">ALERTAS ACTIVAS</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: var(--warning);">2</div>
+      <div style="font-size: 0.75rem; color: #94a3b8;">Proveedores en ruta</div>
+    </div>
+    <div class="day-mode-stat-box">
+      <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">STAFF EN LÍNEA</div>
+      <div style="font-size: 2.4rem; font-weight: 800; color: #a855f7;">12</div>
+      <div style="font-size: 0.75rem; color: #94a3b8;">Accesos y Salas sincronizados</div>
+    </div>
+  </div>
+
+  <div class="day-mode-actions-grid">
+    <button class="day-mode-big-btn" id="day-action-scan">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>SCAN QR CODE</span>
+    </button>
+    <button class="day-mode-big-btn" id="day-action-guests">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <span>SEARCH GUEST</span>
+    </button>
+    <button class="day-mode-big-btn" id="day-action-seating">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <span>SEATING PLAN</span>
+    </button>
+    <button class="day-mode-big-btn" id="day-action-timeline">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>TIMELINE / MINUTA</span>
+    </button>
+    <button class="day-mode-big-btn" id="day-action-ai-reception" style="background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4);">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span style="color: #c084fc;">SMART RECEPTION (AI)</span>
+    </button>
+    <button class="day-mode-big-btn" id="day-action-incidents" style="background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.4);">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span style="color: #f87171;">INCIDENTES</span>
+    </button>
+  </div>
+</div>
+
+<!-- Assets Vault Modal -->
+<div class="modal-backdrop" id="modal-assets-vault" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px); z-index: 9999; justify-content: center; align-items: center; padding: 2rem;">
+  <div class="modal-dialog" style="background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 16px; width: 100%; max-width: 960px; max-height: 90vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7);">
+    <!-- Modal Header -->
+    <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #0284c7, #6366f1); display: flex; align-items: center; justify-content: center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin: 0;">Multimedia & Assets Hub</h3>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Directorio de recursos oficiales: /assets/ (Logo, Música, Video, Imágenes)</p>
+        </div>
+      </div>
+      <button id="btn-close-assets-modal" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 6px; border-radius: 8px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Modal Navigation Tabs -->
+    <div style="display: flex; gap: 0.5rem; padding: 0.75rem 1.75rem; border-bottom: 1px solid var(--border-subtle); background: var(--bg-surface-elevated);">
+      <button class="tab-btn active" data-asset-tab="tab-vault-video" style="padding: 0.5rem 1rem; border-radius: 8px; border: none; background: rgba(99, 102, 241, 0.2); color: #818cf8; font-weight: 600; font-size: 0.85rem; cursor: pointer;">🎬 Videos</button>
+      <button class="tab-btn" data-asset-tab="tab-vault-music" style="padding: 0.5rem 1rem; border-radius: 8px; border: none; background: transparent; color: var(--text-secondary); font-weight: 600; font-size: 0.85rem; cursor: pointer;">🎵 Música & Efectos</button>
+      <button class="tab-btn" data-asset-tab="tab-vault-images" style="padding: 0.5rem 1rem; border-radius: 8px; border: none; background: transparent; color: var(--text-secondary); font-weight: 600; font-size: 0.85rem; cursor: pointer;">🖼️ Imágenes HD</button>
+      <button class="tab-btn" data-asset-tab="tab-vault-logo" style="padding: 0.5rem 1rem; border-radius: 8px; border: none; background: transparent; color: var(--text-secondary); font-weight: 600; font-size: 0.85rem; cursor: pointer;">🏷️ Logos SVG</button>
+    </div>
+
+    <!-- Modal Body Content -->
+    <div style="padding: 1.5rem 1.75rem; overflow-y: auto; flex: 1;">
+      <!-- Tab 1: Video -->
+      <div id="tab-vault-video" class="vault-tab-pane">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="card-panel" style="padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-weight: 700; color: #fff; font-size: 0.95rem;">EVENTLY Official Intro</span>
+              <span class="badge-tag badge-confirmed">HD 720p · MP4</span>
+            </div>
+            <video id="vault-video-intro" controls style="width: 100%; border-radius: 8px; background: #000; aspect-ratio: 16/9;">
+              <source src="assets/video/evently_intro.mp4" type="video/mp4">
+            </video>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Ruta: assets/video/evently_intro.mp4 (con audio sincronizado)</div>
+          </div>
+
+          <div class="card-panel" style="padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span style="font-weight: 700; color: #fff; font-size: 0.95rem;">Video Promocional Evento</span>
+              <span class="badge-tag badge-pending">User Asset · MP4</span>
+            </div>
+            <video id="vault-video-user" controls style="width: 100%; border-radius: 8px; background: #000; aspect-ratio: 16/9;">
+              <source src="assets/video/video.mp4" type="video/mp4">
+            </video>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Ruta: assets/video/video.mp4 (archivo original preservado)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Music -->
+      <div id="tab-vault-music" class="vault-tab-pane" style="display: none;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="card-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 1rem;">Event Lounge Ambient Theme</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Música estéreo de fondo para recepción de invitados y salones ejecutivos (WAV 44.1kHz).</div>
+            </div>
+            <audio controls style="height: 38px;">
+              <source src="assets/music/event_lounge_ambient.wav" type="audio/wav">
+            </audio>
+          </div>
+
+          <div class="card-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div style="font-weight: 700; color: #fff; font-size: 1rem;">TODO PASA AQUÍ (Master Track)</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Audio original sin comprimir proporcionado en el proyecto (WAV Studio).</div>
+            </div>
+            <audio controls style="height: 38px;">
+              <source src="assets/music/TODO%20PASA%20AQU%C3%8D.wav" type="audio/wav">
+            </audio>
+          </div>
+
+          <div class="card-panel" style="padding: 1.25rem;">
+            <div style="font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Efectos de Sonido en Operación de Campo (SFX)</div>
+            <div style="display: flex; gap: 1rem;">
+              <button class="btn-secondary" id="btn-test-beep-sfx" style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                Probar Beep QR Success
+              </button>
+              <button class="btn-secondary" id="btn-test-vip-sfx" style="display: flex; align-items: center; gap: 0.5rem; border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Probar VIP Arrival Fanfare
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: Images -->
+      <div id="tab-vault-images" class="vault-tab-pane" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+          <div class="card-panel" style="padding: 0.75rem; display: flex; flex-direction: column;">
+            <img src="assets/images/hero_gala_event.jpg" alt="Hero Gala" style="width: 100%; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="font-weight: 700; color: #fff; font-size: 0.88rem; margin-top: 0.6rem;">Gala & Banquet Hall</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">assets/images/hero_gala_event.jpg</span>
+          </div>
+          <div class="card-panel" style="padding: 0.75rem; display: flex; flex-direction: column;">
+            <img src="assets/images/concert_arena_stage.jpg" alt="Concert Stage" style="width: 100%; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="font-weight: 700; color: #fff; font-size: 0.88rem; margin-top: 0.6rem;">Arena Stage & Lights</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">assets/images/concert_arena_stage.jpg</span>
+          </div>
+          <div class="card-panel" style="padding: 0.75rem; display: flex; flex-direction: column;">
+            <img src="assets/images/corporate_tech_summit.jpg" alt="Tech Summit" style="width: 100%; border-radius: 8px; aspect-ratio: 16/9; object-fit: cover;">
+            <div style="font-weight: 700; color: #fff; font-size: 0.88rem; margin-top: 0.6rem;">Corporate Summit</div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">assets/images/corporate_tech_summit.jpg</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: Logo -->
+      <div id="tab-vault-logo" class="vault-tab-pane" style="display: none;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="card-panel" style="padding: 1.5rem; text-align: center;">
+            <img src="assets/logo/logo-full.svg" alt="EVENTLY Full Logo" style="max-height: 90px; margin-bottom: 1rem;">
+            <div style="font-weight: 700; color: #fff; font-size: 1rem;">Logo Oficial Horizontal</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Formato SVG Vectorial escalable con tipografía corporativa.</p>
+            <a href="assets/logo/logo-full.svg" download class="btn-secondary" style="font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+              Descargar logo-full.svg
+            </a>
+          </div>
+
+          <div class="card-panel" style="padding: 1.5rem; text-align: center;">
+            <img src="assets/logo/logo-icon.svg" alt="EVENTLY Icon" style="width: 80px; height: 80px; margin-bottom: 1rem;">
+            <div style="font-weight: 700; color: #fff; font-size: 1rem;">Isotipo / App Icon</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Diseño de prisma geométrico para favicon y aplicaciones móviles.</p>
+            <a href="assets/logo/logo-icon.svg" download class="btn-secondary" style="font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.4rem;">
+              Descargar logo-icon.svg
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Feedback Container -->
+<div id="toast-container"></div>
+
+<!-- Application Scripts -->
+<script src="js/mockData.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

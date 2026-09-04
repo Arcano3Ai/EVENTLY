@@ -1,0 +1,10 @@
+{
+  "name": "Smart Guest Control",
+  "description": "Plataforma premium de invitaciones digitales y control de acceso inteligente para eventos.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
