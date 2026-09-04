@@ -168,13 +168,34 @@ class EventlyApp {
       this.showToast("✨ Abriendo Smart Seating Optimizer (IA)");
     };
 
-    const btnOpenTableMap = document.getElementById('btn-open-interactive-tablemap');
-    const btnQuickTableMap = document.getElementById('btn-quick-table-map');
-    const btnQuickSeatingAI = document.getElementById('btn-quick-smart-seating-ai');
+    // Seating Plan Mode Switcher (Interactive vs Summary)
+    const chipInteractive = document.getElementById('chip-seating-interactive');
+    const chipSummary = document.getElementById('chip-seating-summary');
+    const containerInteractive = document.getElementById('seating-interactive-container');
+    const containerSummary = document.getElementById('venue-layout-container');
+    const btnSeatingFullscreen = document.getElementById('btn-open-seating-fullscreen');
 
-    if (btnOpenTableMap) btnOpenTableMap.addEventListener('click', openTableMap);
-    if (btnQuickTableMap) btnQuickTableMap.addEventListener('click', openTableMap);
-    if (btnQuickSeatingAI) btnQuickSeatingAI.addEventListener('click', openSmartSeatingAI);
+    if (chipInteractive && chipSummary && containerInteractive && containerSummary) {
+      chipInteractive.addEventListener('click', () => {
+        chipInteractive.classList.add('active');
+        chipSummary.classList.remove('active');
+        containerInteractive.style.display = 'block';
+        containerSummary.style.display = 'none';
+      });
+
+      chipSummary.addEventListener('click', () => {
+        chipSummary.classList.add('active');
+        chipInteractive.classList.remove('active');
+        containerInteractive.style.display = 'none';
+        containerSummary.style.display = 'flex';
+      });
+    }
+
+    if (btnSeatingFullscreen) {
+      btnSeatingFullscreen.addEventListener('click', () => {
+        window.open('./smart-guest-control/dist/index.html#/admin/tables', '_blank');
+      });
+    }
 
     // Guest Drawer Close
     const closeDrawerBtn = document.getElementById('close-guest-drawer-btn');
