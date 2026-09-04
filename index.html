@@ -880,9 +880,9 @@
         <!-- Quick Route Switcher Bar -->
         <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); align-items: center;">
           <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.4rem;">Vistas del Módulo:</span>
-          <button class="btn-pill-filter active" data-smart-route="#/admin/dashboard">Admin Dashboard</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/dashboard">Admin Dashboard</button>
+          <button class="btn-pill-filter active" data-smart-route="#/admin/tables">Mapa de Mesas</button>
           <button class="btn-pill-filter" data-smart-route="#/admin/smart-seating">✨ Smart Seating (IA)</button>
-          <button class="btn-pill-filter" data-smart-route="#/admin/tables">Mapa de Mesas</button>
           <button class="btn-pill-filter" data-smart-route="#/admin/guests">Invitados & Perfiles</button>
           <button class="btn-pill-filter" data-smart-route="#/reception" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4);">📱 Recepción / QR</button>
           <button class="btn-pill-filter" data-smart-route="#/login" style="margin-left: auto;">Cambiar Rol</button>
@@ -890,7 +890,7 @@
 
         <!-- Embedded React App Frame -->
         <div style="position: relative; width: 100%; height: 860px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.6); background: #09090b;">
-          <iframe id="smart-control-iframe" src="./smart-guest-control/dist/index.html#/admin/dashboard" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
+          <iframe id="smart-control-iframe" src="./smart-guest-control/dist/index.html#/admin/tables" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
         </div>
       </section>
 

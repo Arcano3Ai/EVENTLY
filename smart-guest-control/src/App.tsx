@@ -18,14 +18,15 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/" element={<Navigate to="/admin/tables" replace />} />
         <Route path="/login" element={<Login />} />
         
         {/* Admin/Host Routes */}
         <Route path="/admin" element={<MainLayout />}>
-          <Route index element={<Navigate to="/admin/dashboard" replace />} />
+          <Route index element={<Navigate to="/admin/tables" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="tables" element={<TableMap />} />
+          <Route path="table-map" element={<Navigate to="/admin/tables" replace />} />
           <Route path="guests" element={<GuestList />} />
           <Route path="smart-seating" element={<SmartSeating />} />
         </Route>

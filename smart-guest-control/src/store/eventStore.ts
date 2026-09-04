@@ -4,17 +4,20 @@ import { Guest, Table, Zone, EventStats, Role } from "../types";
 
 // Mock Data Initial State
 const MOCK_ZONES: Zone[] = [
-  { id: "z1", name: "VIP", color: "bg-amber-500" },
-  { id: "z2", name: "FAMILIAR", color: "bg-blue-500" },
-  { id: "z3", name: "AMIGOS", color: "bg-emerald-500" },
-  { id: "z4", name: "EMPRESARIAL", color: "bg-indigo-500" },
+  { id: "z1", name: "PRESIDENCIAL NOVIOS", color: "bg-amber-500" },
+  { id: "z2", name: "FAMILIA DIRECTA", color: "bg-blue-500" },
+  { id: "z3", name: "AMIGOS & TESTIGOS", color: "bg-emerald-500" },
+  { id: "z4", name: "CORPORATIVO & VIP", color: "bg-indigo-500" },
+  { id: "z5", name: "MESA JOVEN", color: "bg-purple-500" },
 ];
 
 const MOCK_TABLES: Table[] = [
-  { id: "t1", number: "1", capacity: 8, zone: "VIP", x: 100, y: 100 },
-  { id: "t2", number: "2", capacity: 8, zone: "VIP", x: 300, y: 100 },
-  { id: "t8", number: "8", capacity: 10, zone: "FAMILIAR", x: 100, y: 300 },
-  { id: "t12", number: "12", capacity: 8, zone: "AMIGOS", x: 300, y: 300 },
+  { id: "t1", number: "1 (Novios)", capacity: 2, zone: "PRESIDENCIAL NOVIOS", x: 380, y: 30 },
+  { id: "t2", number: "2 (Padrinos)", capacity: 10, zone: "FAMILIA DIRECTA", x: 80, y: 160 },
+  { id: "t3", number: "3 (Familia Novia)", capacity: 10, zone: "FAMILIA DIRECTA", x: 680, y: 160 },
+  { id: "t8", number: "8 (Amigos)", capacity: 8, zone: "AMIGOS & TESTIGOS", x: 80, y: 380 },
+  { id: "t12", number: "12 (Universidad)", capacity: 8, zone: "MESA JOVEN", x: 380, y: 380 },
+  { id: "t14", number: "14 (VIP)", capacity: 8, zone: "CORPORATIVO & VIP", x: 680, y: 380 },
 ];
 
 const MOCK_GUESTS: Guest[] = [
@@ -124,7 +127,7 @@ interface EventState {
   addZone: (zone: Zone) => void;
   addGuest: (guest: Guest) => void;
   updateGuest: (guestId: string, updates: Partial<Guest>) => void;
-  removeGuest: (guestId: string) => void;
+  resetToWeddingTemplate: () => void;
   
   // Selectors/Getters
   getStats: () => EventStats;
@@ -134,12 +137,17 @@ interface EventState {
 export const useEventStore = create<EventState>()(
   persist(
     (set, get) => ({
-  role: "RECEPCIONISTA", // Default for testing reception view quickly
+  role: "ADMINISTRADOR", // Acceso total predeterminado a Mapa de Mesas y Dashboard
   setRole: (role) => set({ role }),
-  currentUser: "María",
+  currentUser: "Sergio (Admin)",
   guests: MOCK_GUESTS,
   tables: MOCK_TABLES,
   zones: MOCK_ZONES,
+
+  resetToWeddingTemplate: () => set({
+    tables: MOCK_TABLES,
+    zones: MOCK_ZONES
+  }),
 
   checkInGuest: (guestId, receptionistName) => set((state) => {
     const timeString = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });

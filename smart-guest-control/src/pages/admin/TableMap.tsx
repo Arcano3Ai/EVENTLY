@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEventStore } from '../../store/eventStore';
 import { Card } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
-import { Plus, Users, Armchair, X } from 'lucide-react';
+import { Plus, Users, Armchair, X, Sparkles } from 'lucide-react';
 import { cn, getProfileColor } from '../../lib/utils';
 import { GuestProfile, Zone, Table } from '../../types';
 import { Input } from '../../components/ui/input';
@@ -14,7 +14,7 @@ const ZONE_COLORS = [
 ];
 
 export function TableMap() {
-  const { tables, zones, guests, addZone, addTable, updateTablePosition } = useEventStore();
+  const { tables, zones, guests, addZone, addTable, updateTablePosition, resetToWeddingTemplate } = useEventStore();
   
   const [isAddingZone, setIsAddingZone] = useState(false);
   const [newZoneName, setNewZoneName] = useState('');
@@ -30,7 +30,9 @@ export function TableMap() {
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>, tableId: string) => {
      setDraggingTable(tableId);
-     (e.target as HTMLElement).setPointerCapture(e.pointerId);
+     try {
+       (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+     } catch(err) {}
   };
 
   const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -50,7 +52,9 @@ export function TableMap() {
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
      if (draggingTable) {
         setDraggingTable(null);
-        (e.target as HTMLElement).releasePointerCapture(e.pointerId);
+        try {
+          (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+        } catch(err) {}
      }
   };
 
@@ -92,9 +96,10 @@ export function TableMap() {
           <h2 className="font-display text-3xl font-bold tracking-wide">Mapa de Mesas</h2>
           <p className="text-sm text-zinc-500 mt-2 tracking-wide dark:text-zinc-400">Distribución visual y asignación por colores</p>
         </div>
-        <div className="flex gap-4">
-           <Button variant="outline" className="rounded-xl px-6" onClick={() => setIsAddingZone(true)}><Plus className="w-4 h-4 mr-2"/> Nueva Zona</Button>
-           <Button className="rounded-xl px-6" onClick={() => setIsAddingTable(true)}><Plus className="w-4 h-4 mr-2"/> Nueva Mesa</Button>
+        <div className="flex flex-wrap gap-3">
+           <Button variant="outline" className="rounded-xl px-4 border-amber-500/40 text-amber-500 hover:bg-amber-500/10" onClick={resetToWeddingTemplate} title="Cargar distribución de mesas para boda"><Sparkles className="w-4 h-4 mr-2"/> Plantilla Boda</Button>
+           <Button variant="outline" className="rounded-xl px-5" onClick={() => setIsAddingZone(true)}><Plus className="w-4 h-4 mr-2"/> Nueva Zona</Button>
+           <Button className="rounded-xl px-5" onClick={() => setIsAddingTable(true)}><Plus className="w-4 h-4 mr-2"/> Nueva Mesa</Button>
         </div>
       </div>
 

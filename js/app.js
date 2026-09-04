@@ -147,10 +147,10 @@ class EventlyApp {
     const openTableMap = () => {
       this.switchView('view-smart-control');
       if (smartIframe) {
-        smartIframe.src = './smart-guest-control/dist/index.html#/admin/table-map';
+        smartIframe.src = './smart-guest-control/dist/index.html#/admin/tables';
       }
       smartRouteButtons.forEach(b => {
-        if (b.getAttribute('data-smart-route') === '#/admin/table-map') b.classList.add('active');
+        if (b.getAttribute('data-smart-route') === '#/admin/tables') b.classList.add('active');
         else b.classList.remove('active');
       });
       this.showToast("🗺️ Abriendo Mapa de Mesas Interactivo (Smart Guest Control)");
