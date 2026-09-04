@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EVENTLY — La Plataforma Definitiva de Ventas para Wedding Planners & Producciones de Lujo</title>
-  <meta name="description" content="Sistema operativo diseñado para Wedding Planners y coordinadoras de bodas de alta gama. Smart Seating con IA, recepción VIP sin filas, minuta minuto a minuto y paquetes por evento o mensuales.">
+  <title>EVENTLY — Plataforma de Gestión de Eventos & Bodas de Alta Gama</title>
+  <meta name="description" content="Sistema operativo diseñado para Wedding Planners y coordinadoras de bodas de alta gama. Smart Seating con IA, recepción VIP sin filas, minuta minuto a minuto y paquetes según la cantidad de eventos.">
   <link rel="icon" type="image/svg+xml" href="assets/logo/logo-icon.svg">
   <!-- Google Fonts: Inter & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +35,19 @@
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
+    }
+    .event-count-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 800;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      margin-bottom: 0.75rem;
     }
     .wedding-perk-badge {
       display: inline-block;
@@ -103,13 +116,13 @@
   <header class="site-header">
     <div class="container">
       <div class="nav-inner">
-        <a href="landing.html" class="brand-wrapper" title="EVENTLY Inicio">
-          <img src="assets/logo/logo-full.svg" alt="EVENTLY — Wedding & Event OS">
+        <a href="index.html" class="brand-wrapper" title="EVENTLY Inicio">
+          <img src="assets/logo/logo-full.svg" alt="EVENTLY — Wedding & Event OS" style="height: 42px;">
         </a>
 
         <ul class="nav-links">
           <li><a href="#video-showcase">Video Oficial</a></li>
-          <li><a href="#paquetes">Paquetes & Precios</a></li>
+          <li><a href="#paquetes">Paquetes por Eventos</a></li>
           <li><a href="#wedding-planner">Para Wedding Planners</a></li>
           <li><a href="#smart-seating">Smart Seating IA</a></li>
           <li><a href="#testimonios">Testimonios</a></li>
@@ -121,8 +134,8 @@
             <span id="header-music-icon">🎵</span>
             <span>Música Lounge</span>
           </button>
-          <a href="index.html" class="btn btn-primary" id="btn-enter-app-nav" title="Abrir software de gestión">
-            <span>Consola de Operaciones</span>
+          <a href="app.html" class="btn btn-primary" id="btn-enter-app-nav" title="Ingresar a la consola de operaciones">
+            <span>Ingresar al Sistema</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -152,15 +165,15 @@
         Resuelve el plano de mesas en segundos sin drama entre familias, sincroniza la minuta del banquete minuto a minuto con DJ y catering, y recibe a cada invitado con fanfarria VIP y pase digital QR.
       </p>
 
-      <!-- Botones de Conversión Rápida -->
+      <!-- Botones de Conversión Rápida e Ingreso -->
       <div class="hero-cta-group" style="margin-bottom: 2.75rem;">
         <a href="#paquetes" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.05rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 60%, #b45309 100%); color: #000; font-weight: 800; box-shadow: 0 8px 30px rgba(245, 158, 11, 0.4);">
-          <span>💎 Ver Paquetes & Precios</span>
+          <span>💎 Ver Paquetes por Cantidad de Eventos</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
         </a>
-        <a href="index.html" class="btn btn-secondary" style="padding: 1rem 2.25rem; font-size: 1.05rem; border-color: rgba(255, 255, 255, 0.2);">
+        <a href="app.html" class="btn btn-secondary" style="padding: 1rem 2.25rem; font-size: 1.05rem; border-color: rgba(255, 255, 255, 0.2);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          <span>Probar Software en Vivo (Demo)</span>
+          <span>Ingresar al Sistema (Consola Operativa)</span>
         </a>
       </div>
 
@@ -214,26 +227,26 @@
     </div>
   </section>
 
-  <!-- ==================== SECCIÓN PRINCIPAL DE VENTAS: PAQUETES & PRECIOS ==================== -->
+  <!-- ==================== SECCIÓN PRINCIPAL: 3 PAQUETES POR CANTIDAD DE EVENTOS ==================== -->
   <section class="pricing-section" id="paquetes">
     <div class="container">
-      <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-        <span class="section-tag" style="color: #fbbf24;">Inversión Transparente & Retorno Garantizado</span>
-        <h2 class="section-title">Paquetes Especiales para Wedding Planners</h2>
+      <div style="text-align: center; max-width: 820px; margin: 0 auto;">
+        <span class="section-tag" style="color: #fbbf24;">Planes Adaptados a tu Volumen de Trabajo</span>
+        <h2 class="section-title">3 Paquetes por Cantidad de Eventos</h2>
         <p class="section-desc" style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem;">
-          Paga únicamente por cada boda operada sin plazos forzosos, u obtén eventos ilimitados con nuestra membresía mensual de agencia.
+          Tanto si coordinas una boda única como si diriges una agencia con múltiples fechas al año, tenemos el paquete con el aforo y herramientas exactas para ti.
         </p>
       </div>
 
-      <!-- Controles de Facturación: Por Evento vs Mensual / Moneda -->
+      <!-- Controles de Facturación: Cantidad de Eventos / Moneda -->
       <div class="pricing-controls">
         <div class="toggle-billing-wrapper">
           <button class="billing-toggle-btn active" id="toggle-per-event" data-mode="event">
-            <span>🎟️ Precios por Evento</span>
-            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(0,0,0,0.3); color: #fbbf24;">Pago Único</span>
+            <span>🎟️ Pago por Paquete de Eventos</span>
+            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(0,0,0,0.3); color: #fbbf24;">Por Cantidad</span>
           </button>
           <button class="billing-toggle-btn" id="toggle-monthly" data-mode="monthly">
-            <span>🏢 Membresía Mensual</span>
+            <span>🏢 Membresía Mensual Recurrente</span>
             <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 10px; background: rgba(16, 185, 129, 0.2); color: #34d399;">Agencias & Planners</span>
           </button>
         </div>
@@ -245,77 +258,93 @@
         </div>
       </div>
 
-      <!-- GRID DE PRECIOS DINÁMICOS -->
+      <!-- GRID DE LOS 3 PAQUETES SEGÚN CANTIDAD DE EVENTOS -->
       <div class="pricing-grid" id="pricing-cards-container">
         
-        <!-- CARD 1: Petite Gala / Boda Íntima -->
+        <!-- PAQUETE 1: 1 SOLO EVENTO -->
         <div class="pricing-card" id="card-tier-1">
+          <div class="event-count-badge">
+            <span>🎯 1 SOLO EVENTO</span>
+          </div>
+
           <div class="pricing-header">
-            <h3 class="plan-title" id="tier1-name">Boda Petite</h3>
-            <p class="plan-subtitle" id="tier1-sub">Para bodas íntimas, aniversarios de plata o recepciones civiles boutique.</p>
+            <h3 class="plan-title" id="tier1-name">Single Event (1 Boda)</h3>
+            <p class="plan-subtitle" id="tier1-sub">Ideal para novios o wedding planners que coordinan 1 evento puntual.</p>
             <div class="price-display">
               <span class="price-amount" id="tier1-price">$2,900</span>
-              <span class="price-period" id="tier1-period">/ evento</span>
+              <span class="price-period" id="tier1-period">/ 1 evento completo</span>
             </div>
           </div>
 
           <ul class="pricing-features">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Hasta <strong>150 invitados</strong> confirmados</span>
+              <span><strong>1 Evento completo</strong> activo con soporte total</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Smart Seating con IA (hasta 15 mesas)</span>
+              <span>Hasta <strong>200 invitados</strong> confirmados</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Pases digitales con código QR para WhatsApp</span>
+              <span>Smart Seating con IA (hasta 20 mesas)</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>1 Terminal de recepción</strong> para celular o tablet</span>
+              <span>Pases digitales QR para WhatsApp y Apple Wallet</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Feedback sonoro de confirmación de entrada</span>
+              <span><strong>1 Terminal de recepción móvil</strong> para hostesses</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Feedback auditivo de confirmación de entrada</span>
             </li>
             <li class="disabled">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              <span>Algoritmo de compatibilidad familiar sin drama</span>
+              <span>Eventos simultáneos adicionales</span>
             </li>
             <li class="disabled">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              <span>Fanfarria de novios y protocolo de entrada</span>
+              <span>Marca blanca con logotipo de la Wedding Planner</span>
             </li>
           </ul>
 
-          <button class="btn btn-secondary pricing-cta btn-open-checkout" data-plan="Boda Petite">
-            Seleccionar Paquete
+          <button class="btn btn-secondary pricing-cta btn-open-checkout" data-plan="Single Event (1 Boda)">
+            Elegir Paquete (1 Evento)
           </button>
         </div>
 
-        <!-- CARD 2: Luxury Wedding / Boda de Gran Gala (DESTACADO / MÁS POPULAR) -->
+        <!-- PAQUETE 2: 3 A 5 EVENTOS (PACK TEMPORADA - DESTACADO / MÁS POPULAR) -->
         <div class="pricing-card featured" id="card-tier-2">
           <div class="popular-badge">⭐ El Más Elegido por Wedding Planners</div>
           
+          <div class="event-count-badge" style="background: rgba(245, 158, 11, 0.25); border-color: #f59e0b;">
+            <span>👑 PACK DE 3 A 5 EVENTOS</span>
+          </div>
+
           <div class="pricing-header">
-            <h3 class="plan-title" style="color: #fbbf24;" id="tier2-name">Luxury Wedding</h3>
-            <p class="plan-subtitle" id="tier2-sub">La solución definitiva para recepciones de gala, haciendas y salones de alta etiqueta.</p>
+            <h3 class="plan-title" style="color: #fbbf24;" id="tier2-name">Season Pack (3 a 5 Bodas)</h3>
+            <p class="plan-subtitle" id="tier2-sub">El preferido de coordinadoras activas con agenda de temporada nupcial.</p>
             <div class="price-display">
-              <span class="price-amount" style="color: #fbbf24;" id="tier2-price">$5,800</span>
-              <span class="price-period" id="tier2-period">/ evento</span>
+              <span class="price-amount" style="color: #fbbf24;" id="tier2-price">$7,900</span>
+              <span class="price-period" id="tier2-period">/ pack 5 eventos</span>
             </div>
           </div>
 
           <ul class="pricing-features">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Hasta <strong>500 invitados</strong> confirmados</span>
+              <span><strong>Hasta 5 Eventos o Bodas</strong> en tu temporada</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Smart Seating IA Ilimitado</strong>: Mesas Drag & Drop</span>
+              <span>Hasta <strong>500 invitados por cada evento</strong></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Smart Seating IA Ilimitado</strong> con Drag & Drop</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -323,11 +352,11 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>3 Terminales de acceso simultáneas</strong> (Cero filas)</span>
+              <span><strong>3 Terminales simultáneas por evento</strong> (Cero filas)</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Fanfarria VIP</strong> en la llegada de novios y padrinos</span>
+              <span><strong>Fanfarria VIP</strong> en llegada de novios y padrinos</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
@@ -335,58 +364,58 @@
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Directorio de proveedores y balance de pagos</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Asesor técnico dedicado previo al evento</span>
+              <span>Plantillas reutilizables entre bodas de tu cartera</span>
             </li>
           </ul>
 
-          <button class="btn btn-primary pricing-cta btn-open-checkout" data-plan="Luxury Wedding" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 800; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);">
-            Contratar Luxury Wedding
+          <button class="btn btn-primary pricing-cta btn-open-checkout" data-plan="Season Pack (3 a 5 Bodas)" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 800; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);">
+            Contratar Pack de Temporada
           </button>
         </div>
 
-        <!-- CARD 3: Arena & Festival / Macro Producción -->
+        <!-- PAQUETE 3: EVENTOS ILIMITADOS -->
         <div class="pricing-card" id="card-tier-3">
+          <div class="event-count-badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border-color: rgba(168, 85, 247, 0.4);">
+            <span>🚀 EVENTOS ILIMITADOS</span>
+          </div>
+
           <div class="pricing-header">
-            <h3 class="plan-title" id="tier3-name">Gran Producción</h3>
-            <p class="plan-subtitle" id="tier3-sub">Bodas de destino de fin de semana, macro galas y festivales nupciales.</p>
+            <h3 class="plan-title" id="tier3-name">Agency Unlimited</h3>
+            <p class="plan-subtitle" id="tier3-sub">Para agencias de producción, salones de lujo y hoteles con eventos continuos.</p>
             <div class="price-display">
-              <span class="price-amount" id="tier3-price">$11,900</span>
-              <span class="price-period" id="tier3-period">/ evento</span>
+              <span class="price-amount" id="tier3-price">$16,900</span>
+              <span class="price-period" id="tier3-period">/ eventos ilimitados</span>
             </div>
           </div>
 
           <ul class="pricing-features">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Hasta <strong>2,500 asistentes</strong></span>
+              <span><strong>EVENTOS ILIMITADOS</strong> durante todo el año</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Multi-espacio</strong>: Capilla, Jardín Cóctel, Salón y After Party</span>
+              <span>Sin límite de invitados ni mesas por evento</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Terminales de escaneo ilimitadas con sincronización offline</span>
+              <span><strong>Marca Blanca</strong>: Tu logotipo en invitaciones y accesos</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Control de aforo por zonas y pasillos en tiempo real</span>
+              <span>Cuentas ilimitadas para coordinadoras de campo</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Multi-espacio: Capilla, Jardín, Salón y After Party</span>
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               <span><strong>Concierge técnico presencial o remoto 24/7</strong></span>
             </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Reporte ejecutivo post-boda con analítica completa</span>
-            </li>
           </ul>
 
-          <button class="btn btn-secondary pricing-cta btn-open-checkout" data-plan="Gran Producción">
+          <button class="btn btn-secondary pricing-cta btn-open-checkout" data-plan="Agency Unlimited">
             Contactar Concierge VIP
           </button>
         </div>
@@ -403,7 +432,7 @@
             Garantía "Boda Sin Imprevistos" de EVENTLY
           </h4>
           <p style="color: var(--text-muted); font-size: 0.95rem;">
-            Sabemos que en una boda no hay segundas oportunidades. Si durante la recepción del evento sufres algún retraso técnico atribuible a nuestra plataforma, te devolvemos el <strong>100% del costo de tu paquete</strong> sin preguntas.
+            Sabemos que en una boda no hay segundas oportunidades. Si durante la recepción de tu boda sufres algún retraso técnico atribuible a nuestra plataforma, te devolvemos el <strong>100% del costo de tu paquete</strong> sin preguntas.
           </p>
         </div>
       </div>
@@ -491,8 +520,8 @@
               Mueve mesas redondas, imperiales o barras de bar con precisión milimétrica. Asigna invitados, dietas especiales (veganos, sin gluten, alergias) y visualiza en tiempo real el aforo de cada salón.
             </p>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="index.html" class="btn btn-primary" style="background: linear-gradient(135deg, #6366f1, #a855f7); padding: 0.8rem 1.8rem;">
-                🗺️ Abrir Diseñador de Mesas en Vivo
+              <a href="app.html" class="btn btn-primary" style="background: linear-gradient(135deg, #6366f1, #a855f7); padding: 0.8rem 1.8rem;">
+                🗺️ Probar Diseñador de Mesas en la Consola
               </a>
               <button class="btn btn-secondary" id="btn-test-seating-preview" style="padding: 0.8rem 1.4rem;">
                 ✨ Simular Algoritmo IA
@@ -629,7 +658,7 @@
             </div>
             <div>
               <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Paquete Sugerido</div>
-              <div style="font-size: 1.1rem; font-weight: 800; color: #c084fc; margin-top: 4px;" id="est-recommended-plan">Luxury Wedding</div>
+              <div style="font-size: 1.1rem; font-weight: 800; color: #c084fc; margin-top: 4px;" id="est-recommended-plan">Season Pack (3-5 Bodas)</div>
             </div>
           </div>
 
@@ -683,11 +712,11 @@
 
         <div class="faq-item">
           <div class="faq-question">
-            <span>¿Cuál es la diferencia entre el pago por evento y la membresía mensual?</span>
+            <span>¿Cómo elijo entre el paquete de 1 evento, el pack de temporada o el ilimitado?</span>
             <span style="font-size: 1.25rem;">+</span>
           </div>
           <div class="faq-answer">
-            El pago por evento es ideal si operas bodas de forma esporádica o deseas incluir el costo directo en la cotización de los novios. La membresía mensual está pensada para agencias y Wedding Planners establecidas que realizan 2 o más bodas al mes, brindando eventos ilimitados, cuentas multi-coordinadora y marca blanca con tu propio logotipo.
+            El paquete de 1 Evento es perfecto para novios o planners que operan un proyecto único. Si tienes de 3 a 5 bodas al año, el Season Pack te ahorra más del 40% por evento. Si eres una productora consolidada o recinto con eventos continuos, el paquete Agency Unlimited te brinda bodas y eventos ilimitados con marca blanca.
           </div>
         </div>
       </div>
@@ -705,8 +734,8 @@
         <a href="#paquetes" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.05rem; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800;">
           Contratar Mi Paquete Ahora
         </a>
-        <a href="index.html" class="btn btn-secondary" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
-          Abrir Consola de Operaciones Demo
+        <a href="app.html" class="btn btn-secondary" style="padding: 1rem 2.25rem; font-size: 1.05rem;">
+          Ingresar al Software (Consola Demo)
         </a>
       </div>
     </div>
@@ -727,11 +756,11 @@
         </div>
 
         <div class="footer-col">
-          <h5>Planes & Paquetes</h5>
+          <h5>Planes por Eventos</h5>
           <ul>
-            <li><a href="#paquetes">Pago por Evento</a></li>
-            <li><a href="#paquetes">Membresía de Agencia</a></li>
-            <li><a href="#paquetes">Garantía de Servicio</a></li>
+            <li><a href="#paquetes">Single Event (1 Boda)</a></li>
+            <li><a href="#paquetes">Season Pack (3 a 5 Bodas)</a></li>
+            <li><a href="#paquetes">Agency Unlimited (Ilimitados)</a></li>
             <li><a href="#cotizador">Calculadora de Bodas</a></li>
           </ul>
         </div>
@@ -739,10 +768,10 @@
         <div class="footer-col">
           <h5>Plataforma Operativa</h5>
           <ul>
-            <li><a href="index.html">Consola de Software</a></li>
-            <li><a href="index.html">Smart Seating IA</a></li>
-            <li><a href="index.html">Event-Day Mode</a></li>
-            <li><a href="index.html">Recepción Móvil QR</a></li>
+            <li><a href="app.html">Consola de Software</a></li>
+            <li><a href="app.html">Smart Seating IA</a></li>
+            <li><a href="app.html">Event-Day Mode</a></li>
+            <li><a href="app.html">Recepción Móvil QR</a></li>
           </ul>
         </div>
 
@@ -770,8 +799,8 @@
       <button class="modal-close-btn" id="btn-close-checkout">✕</button>
       
       <span class="wedding-perk-badge" style="margin-bottom: 0.5rem;" id="modal-selected-tier-badge">PAQUETE SELECCIONADO</span>
-      <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;" id="modal-plan-title">Luxury Wedding</h3>
-      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;" id="modal-plan-price-desc">Inversión: $5,800 MXN / evento</p>
+      <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;" id="modal-plan-title">Season Pack (3 a 5 Bodas)</h3>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;" id="modal-plan-price-desc">Inversión: $7,900 MXN / pack 5 eventos</p>
 
       <form id="checkout-lead-form" onsubmit="event.preventDefault(); window.handleLeadSubmit();">
         <div style="margin-bottom: 1rem;">
@@ -909,30 +938,30 @@
         });
       }
 
-      // PRICING ENGINE (Por Evento vs Mensual / MXN vs USD)
+      // PRICING ENGINE (Por Cantidad de Eventos vs Mensual / MXN vs USD)
       const pricingData = {
         event: {
           MXN: {
-            t1: { name: 'Boda Petite', sub: 'Para bodas boutique y recepciones civiles hasta 150 invitados.', price: '$2,900', period: '/ evento' },
-            t2: { name: 'Luxury Wedding', sub: 'La solución definitiva para recepciones de gala, haciendas y salones de alta etiqueta.', price: '$5,800', period: '/ evento' },
-            t3: { name: 'Gran Producción', sub: 'Bodas de destino de fin de semana, macro galas y festivales nupciales.', price: '$11,900', period: '/ evento' }
+            t1: { name: 'Single Event (1 Boda)', sub: 'Ideal para novios o planners que operan 1 evento puntual.', price: '$2,900', period: '/ 1 evento completo' },
+            t2: { name: 'Season Pack (3 a 5 Bodas)', sub: 'El preferido de coordinadoras activas con agenda de temporada nupcial.', price: '$7,900', period: '/ pack 5 eventos' },
+            t3: { name: 'Agency Unlimited', sub: 'Para agencias de producción, salones de lujo y cadenas hoteleras.', price: '$16,900', period: '/ eventos ilimitados' }
           },
           USD: {
-            t1: { name: 'Boda Petite', sub: 'For boutique weddings and civil receptions up to 150 guests.', price: '$149', period: '/ event' },
-            t2: { name: 'Luxury Wedding', sub: 'The premier choice for luxury ballrooms, estates, and haciendas.', price: '$299', period: '/ event' },
-            t3: { name: 'Gran Producción', sub: 'Full weekend destination weddings and large arena galas.', price: '$599', period: '/ event' }
+            t1: { name: 'Single Event (1 Wedding)', sub: 'Ideal for couples or planners managing a single wedding.', price: '$149', period: '/ 1 full event' },
+            t2: { name: 'Season Pack (3 to 5 Weddings)', sub: 'The top choice for active wedding planners during the season.', price: '$399', period: '/ pack 5 events' },
+            t3: { name: 'Agency Unlimited', sub: 'For production agencies, luxury ballrooms, and hotel venues.', price: '$799', period: '/ unlimited events' }
           }
         },
         monthly: {
           MXN: {
-            t1: { name: 'Planner Solo', sub: 'Para coordinadoras independientes con hasta 3 bodas activas simultáneas.', price: '$1,890', period: '/ mes' },
-            t2: { name: 'Agency Studio', sub: 'Bodas y eventos ILIMITADOS con marca blanca para tu estudio de diseño y producción.', price: '$4,490', period: '/ mes' },
-            t3: { name: 'Venue & Hotel', sub: 'Para haciendas de bodas, salones de lujo y cadenas hoteleras.', price: '$8,900', period: '/ mes' }
+            t1: { name: 'Planner Solo (1 a 3 Bodas/mes)', sub: 'Para coordinadoras independientes con hasta 3 bodas activas simultáneas.', price: '$1,890', period: '/ mes' },
+            t2: { name: 'Agency Studio (Hasta 8 Bodas/mes)', sub: 'Bodas continuas con marca blanca para tu estudio de diseño y producción.', price: '$4,490', period: '/ mes' },
+            t3: { name: 'Venue & Hotel (Bodas Ilimitadas)', sub: 'Para haciendas de bodas, salones de lujo y cadenas hoteleras.', price: '$8,900', period: '/ mes' }
           },
           USD: {
-            t1: { name: 'Planner Solo', sub: 'For independent planners managing up to 3 active weddings per month.', price: '$99', period: '/ month' },
-            t2: { name: 'Agency Studio', sub: 'UNLIMITED weddings and events with white-label for your production studio.', price: '$249', period: '/ month' },
-            t3: { name: 'Venue & Hotel', sub: 'For wedding venues, boutique hotels, and luxury estate properties.', price: '$449', period: '/ month' }
+            t1: { name: 'Planner Solo (1 to 3 Weddings/mo)', sub: 'For independent planners managing up to 3 active weddings per month.', price: '$99', period: '/ month' },
+            t2: { name: 'Agency Studio (Up to 8 Weddings/mo)', sub: 'Continuous weddings with white-label for your production studio.', price: '$249', period: '/ month' },
+            t3: { name: 'Venue & Hotel (Unlimited Weddings)', sub: 'For wedding venues, boutique hotels, and luxury estate properties.', price: '$449', period: '/ month' }
           }
         }
       };
@@ -998,8 +1027,8 @@
           const planName = btn.getAttribute('data-plan');
           const data = pricingData[currentMode][currentCurrency];
           let priceText = "";
-          if (planName.includes('Petite') || planName.includes('Solo')) priceText = `${data.t1.price} ${currentCurrency} ${data.t1.period}`;
-          else if (planName.includes('Luxury') || planName.includes('Agency')) priceText = `${data.t2.price} ${currentCurrency} ${data.t2.period}`;
+          if (planName.includes('Single') || planName.includes('1 Boda') || planName.includes('Planner Solo')) priceText = `${data.t1.price} ${currentCurrency} ${data.t1.period}`;
+          else if (planName.includes('Season') || planName.includes('5 Bodas') || planName.includes('Agency Studio')) priceText = `${data.t2.price} ${currentCurrency} ${data.t2.period}`;
           else priceText = `${data.t3.price} ${currentCurrency} ${data.t3.period}`;
 
           document.getElementById('modal-plan-title').textContent = planName;
@@ -1053,9 +1082,9 @@
         const minutes = Math.ceil(guests / (gates * 16));
         timeCount.textContent = `~ ${minutes} Minutos`;
 
-        if (guests <= 150) planRec.textContent = "Boda Petite";
-        else if (guests <= 550) planRec.textContent = "Luxury Wedding (Recomendado)";
-        else planRec.textContent = "Gran Producción";
+        if (guests <= 200) planRec.textContent = "Single Event (1 Boda)";
+        else if (guests <= 600) planRec.textContent = "Season Pack (3-5 Bodas)";
+        else planRec.textContent = "Agency Unlimited";
       }
 
       if (slider && typeSelect) {
