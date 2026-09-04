@@ -114,7 +114,7 @@ class EventlyApp {
     if (dayAiReceptionBtn) {
       dayAiReceptionBtn.addEventListener('click', () => {
         closeDayMode();
-        this.switchView('view-smart-control');
+        this.switchView('view-seating');
         const iframe = document.getElementById('smart-control-iframe');
         if (iframe) {
           iframe.src = './smart-guest-control/dist/index.html#/reception';
@@ -145,7 +145,7 @@ class EventlyApp {
 
     // Direct Navigation from Seating Plan to Smart TableMap
     const openTableMap = () => {
-      this.switchView('view-smart-control');
+      this.switchView('view-seating');
       if (smartIframe) {
         smartIframe.src = './smart-guest-control/dist/index.html#/admin/tables';
       }
@@ -157,7 +157,7 @@ class EventlyApp {
     };
 
     const openSmartSeatingAI = () => {
-      this.switchView('view-smart-control');
+      this.switchView('view-seating');
       if (smartIframe) {
         smartIframe.src = './smart-guest-control/dist/index.html#/admin/smart-seating';
       }
@@ -430,6 +430,9 @@ class EventlyApp {
 
   // Navigation View Switcher
   switchView(viewId) {
+    if (viewId === 'view-smart-control') {
+      viewId = 'view-seating';
+    }
     document.querySelectorAll('.view-section').forEach(sec => sec.classList.remove('active'));
     const targetSection = document.getElementById(viewId);
     if (targetSection) {

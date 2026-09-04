@@ -78,9 +78,10 @@
             </button>
           </li>
           <li>
-            <button class="nav-item-btn" data-view="view-seating">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-              <span class="nav-label">Seating</span>
+            <button class="nav-item-btn" data-view="view-seating" id="nav-seating">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span class="nav-label">Seating & Smart Control</span>
+              <span class="badge-pill" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25)); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4);">AI Studio</span>
             </button>
           </li>
           <li>
@@ -119,20 +120,6 @@
             <button class="nav-item-btn" data-view="view-reports">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
               <span class="nav-label">Reports</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Group: AI Engine -->
-      <div class="nav-group">
-        <div class="nav-group-title">AI Studio Engine</div>
-        <ul class="nav-list">
-          <li>
-            <button class="nav-item-btn" data-view="view-smart-control" id="nav-smart-control">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <span class="nav-label">Smart Guest Control</span>
-              <span class="badge-pill" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.25)); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4);">AI Studio</span>
             </button>
           </li>
         </ul>
@@ -547,28 +534,42 @@
         </div>
       </section>
 
-      <!-- ==================== VIEW: SEATING ==================== -->
+      <!-- ==================== VIEW: SEATING (SMART GUEST CONTROL ENGINE) ==================== -->
       <section class="view-section" id="view-seating">
-        <div class="view-header">
+        <div class="view-header" style="align-items: flex-start;">
           <div class="view-title-group">
-            <h1>Seating Plan & Layout</h1>
-            <p>Distribución espacial del recinto, diseño interactivo con drag & drop y asignación de zonas</p>
-          </div>
-          <div class="header-actions">
-            <div class="table-filters" id="seating-view-mode-selector">
-              <span class="filter-chip active" id="chip-seating-interactive">🗺️ Plano Interactivo (Smart Control)</span>
-              <span class="filter-chip" id="chip-seating-summary">▦ Vista Resumen</span>
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem;">
+              <h1 style="background: linear-gradient(135deg, #fff 40%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smart Seating & Guest Control</h1>
+              <span class="badge-pill" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.6rem;">Google AI Studio</span>
             </div>
-            <button class="btn-primary" id="btn-open-seating-fullscreen" style="background: linear-gradient(135deg, #6366f1, #a855f7);">
+            <p>Distribución espacial interactiva con drag & drop de mesas, algoritmo de afinidades por IA y control de aforo por zonas.</p>
+          </div>
+          <div class="header-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn-secondary" id="btn-smart-open-tab" title="Abrir en pestaña independiente">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Pantalla Completa
             </button>
+            <a href="http://localhost:3000" target="_blank" class="btn-secondary" id="btn-smart-open-dev" title="Abrir servidor dev Vite (:3000)" style="text-decoration: none;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Dev :3000
+            </a>
           </div>
         </div>
 
+        <!-- Quick Route Switcher Bar -->
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); align-items: center;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.4rem;">Vistas de Mesas:</span>
+          <button class="btn-pill-filter active" data-smart-route="#/admin/tables" id="chip-seating-interactive">🗺️ Mapa de Mesas Drag & Drop</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/smart-seating">✨ Smart Seating (IA)</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/guests">👥 Invitados & Perfiles</button>
+          <button class="btn-pill-filter" data-smart-route="#/admin/dashboard">📊 Métricas Salón</button>
+          <button class="btn-pill-filter" data-smart-route="#/reception" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4);">📱 Recepción Móvil</button>
+          <button class="btn-pill-filter" id="chip-seating-summary" style="margin-left: auto;">▦ Vista Resumen Salón</button>
+        </div>
+
         <!-- Contenedor 1: Plano Interactivo Drag & Drop (Directamente Embebido) -->
-        <div id="seating-interactive-container" style="position: relative; width: 100%; height: 840px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(99, 102, 241, 0.35); box-shadow: 0 20px 50px rgba(0,0,0,0.6); background: #09090b; margin-bottom: 2rem;">
-          <iframe id="seating-tables-iframe" src="./smart-guest-control/dist/index.html#/admin/tables" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
+        <div id="seating-interactive-container" style="position: relative; width: 100%; height: 860px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.6); background: #09090b; margin-bottom: 2rem;">
+          <iframe id="smart-control-iframe" src="./smart-guest-control/dist/index.html#/admin/tables" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
         </div>
 
         <!-- Contenedor 2: Vista Resumen (Inicialmente oculta) -->
@@ -842,45 +843,6 @@
               <div style="font-size: 0.8rem; color: var(--text-muted);">Accesos no autorizados</div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- ==================== VIEW: SMART GUEST CONTROL (AI STUDIO) ==================== -->
-      <section class="view-section" id="view-smart-control">
-        <div class="view-header" style="align-items: flex-start;">
-          <div class="view-title-group">
-            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.35rem;">
-              <h1 style="background: linear-gradient(135deg, #fff 40%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Smart Guest Control & Seating AI</h1>
-              <span class="badge-pill" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.6rem;">Google AI Studio</span>
-            </div>
-            <p>Módulo autónomo para distribución automatizada de asientos con IA, mapa táctico de mesas y terminal de recepción QR móvil.</p>
-          </div>
-          <div class="header-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <button class="btn-secondary" id="btn-smart-open-tab" title="Abrir en pestaña independiente">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Abrir Completo
-            </button>
-            <a href="http://localhost:3000" target="_blank" class="btn-secondary" id="btn-smart-open-dev" title="Abrir servidor dev Vite (:3000)" style="text-decoration: none;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              Dev :3000
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Route Switcher Bar -->
-        <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: var(--bg-surface); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); align-items: center;">
-          <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.4rem;">Vistas del Módulo:</span>
-          <button class="btn-pill-filter" data-smart-route="#/admin/dashboard">Admin Dashboard</button>
-          <button class="btn-pill-filter active" data-smart-route="#/admin/tables">Mapa de Mesas</button>
-          <button class="btn-pill-filter" data-smart-route="#/admin/smart-seating">✨ Smart Seating (IA)</button>
-          <button class="btn-pill-filter" data-smart-route="#/admin/guests">Invitados & Perfiles</button>
-          <button class="btn-pill-filter" data-smart-route="#/reception" style="color: #10b981; border-color: rgba(16, 185, 129, 0.4);">📱 Recepción / QR</button>
-          <button class="btn-pill-filter" data-smart-route="#/login" style="margin-left: auto;">Cambiar Rol</button>
-        </div>
-
-        <!-- Embedded React App Frame -->
-        <div style="position: relative; width: 100%; height: 860px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(168, 85, 247, 0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.6); background: #09090b;">
-          <iframe id="smart-control-iframe" src="./smart-guest-control/dist/index.html#/admin/tables" style="width: 100%; height: 100%; border: none;" allow="camera; microphone; clipboard-write;"></iframe>
         </div>
       </section>
 
