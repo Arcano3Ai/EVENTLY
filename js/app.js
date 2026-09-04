@@ -143,6 +143,39 @@ class EventlyApp {
       });
     }
 
+    // Direct Navigation from Seating Plan to Smart TableMap
+    const openTableMap = () => {
+      this.switchView('view-smart-control');
+      if (smartIframe) {
+        smartIframe.src = './smart-guest-control/dist/index.html#/admin/table-map';
+      }
+      smartRouteButtons.forEach(b => {
+        if (b.getAttribute('data-smart-route') === '#/admin/table-map') b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      this.showToast("🗺️ Abriendo Mapa de Mesas Interactivo (Smart Guest Control)");
+    };
+
+    const openSmartSeatingAI = () => {
+      this.switchView('view-smart-control');
+      if (smartIframe) {
+        smartIframe.src = './smart-guest-control/dist/index.html#/admin/smart-seating';
+      }
+      smartRouteButtons.forEach(b => {
+        if (b.getAttribute('data-smart-route') === '#/admin/smart-seating') b.classList.add('active');
+        else b.classList.remove('active');
+      });
+      this.showToast("✨ Abriendo Smart Seating Optimizer (IA)");
+    };
+
+    const btnOpenTableMap = document.getElementById('btn-open-interactive-tablemap');
+    const btnQuickTableMap = document.getElementById('btn-quick-table-map');
+    const btnQuickSeatingAI = document.getElementById('btn-quick-smart-seating-ai');
+
+    if (btnOpenTableMap) btnOpenTableMap.addEventListener('click', openTableMap);
+    if (btnQuickTableMap) btnQuickTableMap.addEventListener('click', openTableMap);
+    if (btnQuickSeatingAI) btnQuickSeatingAI.addEventListener('click', openSmartSeatingAI);
+
     // Guest Drawer Close
     const closeDrawerBtn = document.getElementById('close-guest-drawer-btn');
     const drawerBackdrop = document.getElementById('guest-drawer-backdrop');
