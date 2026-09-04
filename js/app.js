@@ -28,13 +28,19 @@ class EventlyApp {
     this.renderTasksBoard();
     this.renderTimeline();
 
-    // Welcome authenticated user toast
+    // Welcome authenticated user toast & update topbar profile
     const authUser = sessionStorage.getItem('evently_auth_user');
     if (authUser) {
       try {
         const user = JSON.parse(authUser);
+        const nameEl = document.getElementById('app-user-name');
+        const avatarEl = document.getElementById('app-user-avatar');
+        if (nameEl && user.name) nameEl.textContent = user.name;
+        if (avatarEl && (user.avatar || user.name)) {
+          avatarEl.textContent = user.avatar || user.name.charAt(0).toUpperCase();
+        }
         setTimeout(() => {
-          this.showToast(`✨ Bienvenida, ${user.name} (${user.agency || 'Wedding Planner Pro'})`);
+          this.showToast(`✨ Sesión activa: ${user.name} (${user.agency || 'EVENTLY'})`);
         }, 500);
       } catch (e) {}
     }

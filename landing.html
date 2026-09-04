@@ -116,8 +116,9 @@
   <header class="site-header">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="brand-wrapper" title="EVENTLY Inicio">
-          <img src="assets/logo/logo-full.svg" alt="EVENTLY — Wedding & Event OS" style="height: 42px;">
+        <a href="index.html" class="brand-wrapper" title="EVENTLY Inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <img src="assets/logo/logooficial.jpg" alt="EVENTLY — Wedding & Event OS" style="height: 44px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+          <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: #fff;">EVENTLY</span>
         </a>
 
         <ul class="nav-links">
@@ -130,9 +131,9 @@
         </ul>
 
         <div class="nav-actions">
-          <button id="header-music-toggle" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;" title="Música Lounge">
+          <button id="header-music-toggle" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.82rem; border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;" title="Música Oficial: TODO PASA AQUÍ (assets/music)">
             <span id="header-music-icon">🎵</span>
-            <span>Música Lounge</span>
+            <span id="header-music-text">Música: Todo Pasa Aquí</span>
           </button>
           <a href="login.html" class="btn btn-primary" id="btn-enter-app-nav" title="Iniciar sesión en el sistema">
             <span>Iniciar Sesión</span>
@@ -181,6 +182,7 @@
       <div id="video-showcase" class="hero-showcase-box" style="max-width: 1180px; border: 2px solid rgba(245, 158, 11, 0.5); box-shadow: 0 25px 90px -15px rgba(245, 158, 11, 0.3), 0 0 60px rgba(99, 102, 241, 0.25); margin-bottom: 3.5rem;">
         <div class="showcase-video-wrapper" style="position: relative;">
           <video id="hero-main-video" autoplay loop muted playsinline poster="assets/images/hero_gala_event.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <source src="assets/video/video.mp4" type="video/mp4">
             <source src="assets/video/evently_intro.mp4" type="video/mp4">
             Tu navegador no soporta reproducción de video HTML5.
           </video>
@@ -746,7 +748,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo/logo-full.svg" alt="EVENTLY Logo" style="height: 38px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+            <img src="assets/logo/logooficial.jpg" alt="EVENTLY Logo" style="height: 40px; border-radius: 6px; object-fit: cover;">
+            <span style="font-size: 1.2rem; font-weight: 800; color: #fff;">EVENTLY</span>
+          </div>
           <p>
             The Premier Event Operations Platform. Diseñado para Wedding Planners, agencias de lujo y directores de producción nupcial.
           </p>
@@ -778,10 +783,9 @@
         <div class="footer-col">
           <h5>Recursos de Marca</h5>
           <ul>
-            <li><a href="assets/logo/logo-full.svg" download>Logo Kit (SVG)</a></li>
-            <li><a href="assets/video/evently_intro.mp4" download>Reel Oficial (MP4)</a></li>
-            <li><a href="assets/music/event_lounge_ambient.wav" download>Soundtrack Lounge (WAV)</a></li>
-            <li><a href="assets/music/vip_arrival_fanfare.wav" download>Fanfarria de Novios (WAV)</a></li>
+            <li><a href="assets/logo/logooficial.jpg" download>Logo Oficial (JPG)</a></li>
+            <li><a href="assets/video/video.mp4" download>Reel Oficial (MP4)</a></li>
+            <li><a href="assets/music/TODO%20PASA%20AQU%C3%8D.wav" download>Música Oficial: TODO PASA AQUÍ (WAV)</a></li>
           </ul>
         </div>
       </div>
@@ -835,45 +839,55 @@
     </div>
   </div>
 
-  <!-- Floating Ambient Lounge Audio Widget -->
-  <div class="floating-audio-widget" id="floating-audio-btn" title="Activar/Pausar música ambiental Lounge">
+  <!-- Floating Ambient Music Audio Widget -->
+  <div class="floating-audio-widget" id="floating-audio-btn" title="Activar/Pausar música: TODO PASA AQUÍ (assets/music/)">
     <div class="audio-pulse-dot" id="audio-pulse-indicator"></div>
-    <span class="audio-widget-text" id="audio-widget-label">Música: Lounge Boda</span>
+    <span class="audio-widget-text" id="audio-widget-label">Música: TODO PASA AQUÍ</span>
   </div>
 
   <!-- Audio Element -->
   <audio id="ambient-audio-player" loop preload="auto">
-    <source src="assets/music/event_lounge_ambient.wav" type="audio/wav">
+    <source src="assets/music/TODO%20PASA%20AQU%C3%8D.wav" type="audio/wav">
+    <source src="assets/music/TODO PASA AQUÍ.wav" type="audio/wav">
+    <source src="assets/music/todo_pasa_aqui.wav" type="audio/wav">
   </audio>
 
   <!-- Interactive Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Audio Engine
+      // Audio Engine - Assets Music (assets/music/TODO PASA AQUÍ.wav)
       const ambientPlayer = document.getElementById('ambient-audio-player');
       const floatAudioBtn = document.getElementById('floating-audio-btn');
       const headerMusicBtn = document.getElementById('header-music-toggle');
+      const headerMusicText = document.getElementById('header-music-text');
       const audioIndicator = document.getElementById('audio-pulse-indicator');
       const audioLabel = document.getElementById('audio-widget-label');
       let isPlaying = false;
 
+      function playMusic() {
+        ambientPlayer.play().then(() => {
+          isPlaying = true;
+          audioIndicator.classList.add('playing');
+          audioLabel.textContent = "Reproduciendo: TODO PASA AQUÍ";
+          if (headerMusicText) headerMusicText.textContent = "Pausar: TODO PASA AQUÍ";
+          if (headerMusicBtn) headerMusicBtn.style.background = "rgba(245, 158, 11, 0.3)";
+        }).catch(err => {
+          console.log("Audio play prevented:", err);
+        });
+      }
+
+      function pauseMusic() {
+        ambientPlayer.pause();
+        isPlaying = false;
+        audioIndicator.classList.remove('playing');
+        audioLabel.textContent = "Música: TODO PASA AQUÍ";
+        if (headerMusicText) headerMusicText.textContent = "Música: TODO PASA AQUÍ";
+        if (headerMusicBtn) headerMusicBtn.style.background = "transparent";
+      }
+
       function toggleAmbient() {
-        if (!isPlaying) {
-          ambientPlayer.play().then(() => {
-            isPlaying = true;
-            audioIndicator.classList.add('playing');
-            audioLabel.textContent = "Reproduciendo Lounge";
-            if (headerMusicBtn) headerMusicBtn.style.background = "rgba(245, 158, 11, 0.25)";
-          }).catch(err => {
-            console.log("Audio play prevented:", err);
-          });
-        } else {
-          ambientPlayer.pause();
-          isPlaying = false;
-          audioIndicator.classList.remove('playing');
-          audioLabel.textContent = "Música: Lounge Boda";
-          if (headerMusicBtn) headerMusicBtn.style.background = "transparent";
-        }
+        if (!isPlaying) playMusic();
+        else pauseMusic();
       }
 
       if (floatAudioBtn) floatAudioBtn.addEventListener('click', toggleAmbient);

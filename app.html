@@ -186,9 +186,9 @@
           <span class="notif-badge-count">4</span>
         </button>
 
-        <div class="user-profile-btn" id="user-profile-btn">
-          <div class="user-avatar">S</div>
-          <span style="font-size: 0.88rem; font-weight: 600;">Sergio</span>
+        <div class="user-profile-btn" id="user-profile-btn" title="Perfil de usuario activo">
+          <div class="user-avatar" id="app-user-avatar">I</div>
+          <span id="app-user-name" style="font-size: 0.88rem; font-weight: 600;">Irma García</span>
         </div>
       </div>
     </header>
@@ -1051,38 +1051,16 @@
       <!-- Tab 2: Music -->
       <div id="tab-vault-music" class="vault-tab-pane" style="display: none;">
         <div style="display: flex; flex-direction: column; gap: 1rem;">
-          <div class="card-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+          <div class="card-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; border-color: rgba(245, 158, 11, 0.4);">
             <div>
-              <div style="font-weight: 700; color: #fff; font-size: 1rem;">Event Lounge Ambient Theme</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Música estéreo de fondo para recepción de invitados y salones ejecutivos (WAV 44.1kHz).</div>
-            </div>
-            <audio controls style="height: 38px;">
-              <source src="assets/music/event_lounge_ambient.wav" type="audio/wav">
-            </audio>
-          </div>
-
-          <div class="card-panel" style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-weight: 700; color: #fff; font-size: 1rem;">TODO PASA AQUÍ (Master Track)</div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Audio original sin comprimir proporcionado en el proyecto (WAV Studio).</div>
+              <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">TODO PASA AQUÍ (Tema Oficial)</div>
+              <div style="font-size: 0.78rem; color: #fbbf24; margin-top: 2px;">Banda sonora insignia de la plataforma (assets/music/TODO PASA AQUÍ.wav).</div>
             </div>
             <audio controls style="height: 38px;">
               <source src="assets/music/TODO%20PASA%20AQU%C3%8D.wav" type="audio/wav">
+              <source src="assets/music/TODO PASA AQUÍ.wav" type="audio/wav">
+              <source src="assets/music/todo_pasa_aqui.wav" type="audio/wav">
             </audio>
-          </div>
-
-          <div class="card-panel" style="padding: 1.25rem;">
-            <div style="font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Efectos de Sonido en Operación de Campo (SFX)</div>
-            <div style="display: flex; gap: 1rem;">
-              <button class="btn-secondary" id="btn-test-beep-sfx" style="display: flex; align-items: center; gap: 0.5rem;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                Probar Beep QR Success
-              </button>
-              <button class="btn-secondary" id="btn-test-vip-sfx" style="display: flex; align-items: center; gap: 0.5rem; border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                Probar VIP Arrival Fanfare
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -1110,22 +1088,13 @@
 
       <!-- Tab 4: Logo -->
       <div id="tab-vault-logo" class="vault-tab-pane" style="display: none;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-          <div class="card-panel" style="padding: 1.5rem; text-align: center;">
-            <img src="assets/logo/logo-full.svg" alt="EVENTLY Full Logo" style="max-height: 90px; margin-bottom: 1rem;">
-            <div style="font-weight: 700; color: #fff; font-size: 1rem;">Logo Oficial Horizontal</div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Formato SVG Vectorial escalable con tipografía corporativa.</p>
-            <a href="assets/logo/logo-full.svg" download class="btn-secondary" style="font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-              Descargar logo-full.svg
-            </a>
-          </div>
-
-          <div class="card-panel" style="padding: 1.5rem; text-align: center;">
-            <img src="assets/logo/logo-icon.svg" alt="EVENTLY Icon" style="width: 80px; height: 80px; margin-bottom: 1rem;">
-            <div style="font-weight: 700; color: #fff; font-size: 1rem;">Isotipo / App Icon</div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Diseño de prisma geométrico para favicon y aplicaciones móviles.</p>
-            <a href="assets/logo/logo-icon.svg" download class="btn-secondary" style="font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-              Descargar logo-icon.svg
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 500px; margin: 0 auto;">
+          <div class="card-panel" style="padding: 1.75rem; text-align: center;">
+            <img src="assets/logo/logooficial.jpg" alt="EVENTLY Logo Oficial" style="max-height: 140px; border-radius: 12px; margin-bottom: 1rem; object-fit: cover; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+            <div style="font-weight: 700; color: #fff; font-size: 1.1rem;">Logo Oficial EVENTLY</div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.25rem;">Identidad visual corporativa oficial ubicada en assets/logo/logooficial.jpg</p>
+            <a href="assets/logo/logooficial.jpg" download class="btn-secondary" style="font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">
+              Descargar logooficial.jpg
             </a>
           </div>
         </div>

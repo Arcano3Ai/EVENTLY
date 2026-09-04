@@ -203,9 +203,10 @@
   <div class="glow-orb glow-orb-2" style="background: radial-gradient(circle, rgba(244, 63, 94, 0.15) 0%, transparent 70%); bottom: 40px; right: 0;"></div>
 
   <!-- Header Simplificado -->
-  <header style="padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10;">
-    <a href="index.html" class="brand-wrapper" title="Volver al Inicio">
-      <img src="assets/logo/logo-full.svg" alt="EVENTLY Logo" style="height: 38px;">
+  <header style="padding: 1.25rem 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10;">
+    <a href="index.html" class="brand-wrapper" title="Volver al Inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+      <img src="assets/logo/logooficial.jpg" alt="EVENTLY Logo" style="height: 42px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.4);">
+      <span style="font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.02em;">EVENTLY</span>
     </a>
     <a href="index.html#paquetes" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.45rem 1rem; border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;">
       💎 Ver Planes & Precios
@@ -213,25 +214,77 @@
   </header>
 
   <!-- Login Card Principal -->
-  <main class="login-container">
+  <main class="login-container" style="max-width: 540px;">
     <div class="login-card">
       <div class="login-brand-header">
         <div style="display: inline-block; padding: 6px 16px; border-radius: var(--radius-full); background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); color: #fbbf24; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem;">
-          Acceso Exclusivo a la Plataforma
+          Acceso Oficial a la Plataforma
         </div>
         <h1 class="login-title">Ingreso al Sistema</h1>
         <p class="login-subtitle">Consola de operaciones para Wedding Planners & Producciones</p>
       </div>
 
+      <!-- Tarjetas de Acceso Rápido: 3 Usuarios de Prueba -->
+      <div style="background: rgba(22, 30, 49, 0.7); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-md); padding: 1.1rem; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #fbbf24;">
+            👥 3 Usuarios de Prueba Oficiales
+          </span>
+          <span style="font-size: 0.7rem; color: var(--text-muted);">(Haz clic para autocompletar)</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 0.6rem;">
+          <!-- Usuario 1: Admin -->
+          <button type="button" onclick="window.selectDemoUser('admin', 'admin123', 'admin', 'Administrador General', 'EVENTLY Core Management')" style="background: rgba(14, 19, 31, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; transition: all 0.2s;" onmouseover="this.style.borderColor='#f59e0b'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: #f59e0b; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">A</div>
+              <div>
+                <div style="font-size: 0.84rem; font-weight: 700; color: #fff;">admin</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Pass: <strong style="color: #fbbf24;">admin123</strong> · Rol: Dirección General</div>
+              </div>
+            </div>
+            <span style="font-size: 0.72rem; background: rgba(245,158,11,0.2); color: #fbbf24; padding: 3px 8px; border-radius: 4px; font-weight: 600;">Usar</span>
+          </button>
+
+          <!-- Usuario 2: Irma García -->
+          <button type="button" onclick="window.selectDemoUser('Irma García', 'cristiancantú', 'admin', 'Irma García', 'Irma García Haute Weddings')" style="background: rgba(14, 19, 31, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; transition: all 0.2s;" onmouseover="this.style.borderColor='#ec4899'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: #ec4899; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">I</div>
+              <div>
+                <div style="font-size: 0.84rem; font-weight: 700; color: #fff;">Irma García</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Pass: <strong style="color: #f472b6;">cristiancantú</strong> · Wedding Planner Senior</div>
+              </div>
+            </div>
+            <span style="font-size: 0.72rem; background: rgba(236,72,153,0.2); color: #f472b6; padding: 3px 8px; border-radius: 4px; font-weight: 600;">Usar</span>
+          </button>
+
+          <!-- Usuario 3: Yolanda Pérez -->
+          <button type="button" onclick="window.selectDemoUser('Yolanda Pérez', 'joeldania', 'coordinator', 'Yolanda Pérez', 'Yolanda Pérez Event Coordination')" style="background: rgba(14, 19, 31, 0.9); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left; transition: all 0.2s;" onmouseover="this.style.borderColor='#38bdf8'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)'">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: #38bdf8; color: #000; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">Y</div>
+              <div>
+                <div style="font-size: 0.84rem; font-weight: 700; color: #fff;">Yolanda Pérez</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Pass: <strong style="color: #38bdf8;">joeldania</strong> · Coordinadora de Campo</div>
+              </div>
+            </div>
+            <span style="font-size: 0.72rem; background: rgba(56,189,248,0.2); color: #38bdf8; padding: 3px 8px; border-radius: 4px; font-weight: 600;">Usar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mensaje de Feedback -->
+      <div id="login-alert" style="display: none; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.85rem; font-weight: 600;"></div>
+
+      <!-- Formulario de Login -->
       <form id="login-form" onsubmit="event.preventDefault(); window.handleLogin();">
         <div class="form-group">
-          <label class="form-label" for="login-email">Correo Electrónico:</label>
-          <input type="email" id="login-email" class="form-input" required placeholder="planner@evently.com" value="planner.sofia@alatorreweddings.com">
+          <label class="form-label" for="login-username">Usuario o Correo Electrónico:</label>
+          <input type="text" id="login-username" class="form-input" required placeholder="admin, Irma García, Yolanda Pérez..." value="admin">
         </div>
 
         <div class="form-group">
           <label class="form-label" for="login-password">Contraseña:</label>
-          <input type="password" id="login-password" class="form-input" required placeholder="••••••••" value="Evently2026!">
+          <input type="password" id="login-password" class="form-input" required placeholder="••••••••" value="admin123">
         </div>
 
         <div class="form-group">
@@ -248,7 +301,7 @@
             <input type="checkbox" id="remember-me" checked style="accent-color: #f59e0b;">
             <span>Recordar mi sesión</span>
           </label>
-          <a href="#" onclick="alert('Ingresa con tu correo demo o utiliza el botón de Acceso Rápido 1-Click.'); return false;" class="forgot-link">¿Olvidaste tu contraseña?</a>
+          <a href="#" onclick="alert('Selecciona uno de los 3 usuarios de prueba oficiales arriba para ingresar automáticamente.'); return false;" class="forgot-link">¿Ayuda con credenciales?</a>
         </div>
 
         <button type="submit" class="btn-login-submit" id="btn-login-submit">
@@ -260,10 +313,10 @@
       <!-- Botón de Acceso Rápido 1-Click para Evaluación / Demo -->
       <div class="demo-fast-access-box">
         <div style="font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;">
-          ¿Deseas probar la plataforma sin registrarte?
+          ¿Acceso rápido instantáneo?
         </div>
         <button class="btn-demo-quick" id="btn-demo-oneclick" onclick="window.handleQuickDemo();">
-          <span>⚡ Acceso Rápido Demo (1-Click)</span>
+          <span>⚡ Acceso Instantáneo Demo (1-Click)</span>
         </button>
       </div>
 
@@ -282,20 +335,111 @@
   </footer>
 
   <script>
-    function handleLogin() {
-      const email = document.getElementById('login-email').value;
-      const role = document.getElementById('login-role').value;
-      const btn = document.getElementById('btn-login-submit');
+    // Configuración de los 3 usuarios oficiales
+    const OFFICIAL_USERS = [
+      {
+        id: "admin",
+        username: "admin",
+        password: "admin123",
+        name: "Administrador General",
+        agency: "EVENTLY Core Operations",
+        role: "admin",
+        avatar: "A"
+      },
+      {
+        id: "irma",
+        username: "Irma García",
+        altUsernames: ["irma", "irmagarcia", "irma garcia", "irma@evently.com"],
+        password: "cristiancantú",
+        altPasswords: ["cristiancantu", "cristian cantu"],
+        name: "Irma García",
+        agency: "Irma García Haute Weddings",
+        role: "admin",
+        avatar: "I"
+      },
+      {
+        id: "yolanda",
+        username: "Yolanda Pérez",
+        altUsernames: ["yolanda", "yolandaperez", "yolanda perez", "yolanda@evently.com"],
+        password: "joeldania",
+        altPasswords: ["joeldania"],
+        name: "Yolanda Pérez",
+        agency: "Yolanda Pérez Event Coordination",
+        role: "coordinator",
+        avatar: "Y"
+      }
+    ];
+
+    function selectDemoUser(username, password, role, name, agency) {
+      document.getElementById('login-username').value = username;
+      document.getElementById('login-password').value = password;
+      document.getElementById('login-role').value = role;
       
+      const alertBox = document.getElementById('login-alert');
+      alertBox.style.display = 'block';
+      alertBox.style.background = 'rgba(245, 158, 11, 0.15)';
+      alertBox.style.border = '1px solid rgba(245, 158, 11, 0.4)';
+      alertBox.style.color = '#fbbf24';
+      alertBox.innerHTML = `✓ Credenciales de <strong>${name}</strong> cargadas. Haz clic en "Ingresar".`;
+    }
+
+    function normalizeText(str) {
+      return (str || '')
+        .trim()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function handleLogin() {
+      const usernameInput = document.getElementById('login-username').value.trim();
+      const passwordInput = document.getElementById('login-password').value.trim();
+      const roleSelect = document.getElementById('login-role').value;
+      const btn = document.getElementById('btn-login-submit');
+      const alertBox = document.getElementById('login-alert');
+
+      const normUser = normalizeText(usernameInput);
+      const normPass = normalizeText(passwordInput);
+
+      // Buscar coincidencia en usuarios oficiales
+      const matchedUser = OFFICIAL_USERS.find(u => {
+        const userMatches = normalizeText(u.username) === normUser || 
+          (u.altUsernames && u.altUsernames.some(alt => normalizeText(alt) === normUser));
+        
+        const passMatches = normalizeText(u.password) === normPass ||
+          (u.altPasswords && u.altPasswords.some(altP => normalizeText(altP) === normPass));
+
+        return userMatches && passMatches;
+      });
+
+      if (!matchedUser) {
+        // Alerta de credenciales inválidas pero amigable
+        alertBox.style.display = 'block';
+        alertBox.style.background = 'rgba(239, 68, 68, 0.15)';
+        alertBox.style.border = '1px solid rgba(239, 68, 68, 0.4)';
+        alertBox.style.color = '#f87171';
+        alertBox.innerHTML = `⚠️ Credenciales incorrectas. Puedes usar uno de los 3 usuarios oficiales arriba: <strong>admin</strong> (admin123), <strong>Irma García</strong> (cristiancantú) o <strong>Yolanda Pérez</strong> (joeldania).`;
+        return;
+      }
+
+      // Éxito en autenticación
+      alertBox.style.display = 'block';
+      alertBox.style.background = 'rgba(16, 185, 129, 0.15)';
+      alertBox.style.border = '1px solid rgba(16, 185, 129, 0.4)';
+      alertBox.style.color = '#34d399';
+      alertBox.innerHTML = `✓ Bienvenido, <strong>${matchedUser.name}</strong>. Accediendo a la Consola...`;
+
       btn.innerHTML = `<span>Accediendo al Sistema...</span>`;
       btn.style.opacity = "0.8";
 
       // Guardar sesión de usuario
       sessionStorage.setItem('evently_auth_user', JSON.stringify({
-        email: email,
-        name: "Sofía Alatorre",
-        agency: "Alatorre Wedding Studio",
-        role: role,
+        id: matchedUser.id,
+        username: matchedUser.username,
+        name: matchedUser.name,
+        agency: matchedUser.agency,
+        role: roleSelect || matchedUser.role,
+        avatar: matchedUser.avatar,
         loginTime: new Date().toISOString()
       }));
 
@@ -306,13 +450,15 @@
 
     function handleQuickDemo() {
       const btn = document.getElementById('btn-demo-oneclick');
-      btn.textContent = "⚡ Conectando con la Consola Operativa...";
+      btn.textContent = "⚡ Conectando como Irma García (Wedding Planner)...";
       
       sessionStorage.setItem('evently_auth_user', JSON.stringify({
-        email: "demo.planner@evently.com",
-        name: "Wedding Planner Pro (Demo)",
-        agency: "Haute Events Studio",
+        id: "irma",
+        username: "Irma García",
+        name: "Irma García",
+        agency: "Irma García Haute Weddings",
         role: "admin",
+        avatar: "I",
         loginTime: new Date().toISOString()
       }));
 
